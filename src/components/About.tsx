@@ -46,12 +46,12 @@ export default function About() {
 						{/* Main image */}
 						<div className="relative rounded-3xl overflow-hidden aspect-[4/5] max-w-md mx-auto lg:mx-0">
 							<img
-								src="/images/rodrigo-dev.jpeg"
+								src={`${import.meta.env.BASE_URL}images/rodrigo-dev.jpeg`}
 								alt="Rodrigo Rincón"
 								className="w-full h-full object-cover"
 							/>
 							{/* Gradient overlay */}
-							<div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent" />
+							<div className="absolute inset-0 bg-linear-to-t from-dark via-dark/20 to-transparent" />
 
 							{/* Floating card - Experience */}
 							<motion.div
