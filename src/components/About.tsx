@@ -9,7 +9,7 @@ const stats = [
 
 export default function About() {
 	return (
-		<section id="about" className="py-32 relative">
+		<section id="about" className="py-16 sm:py-32 relative">
 			{/* Background */}
 			<div className="absolute inset-0 overflow-hidden">
 				<div className="absolute bottom-0 left-1/4 w-96 h-96 bg-accent-purple/15 rounded-full blur-[120px]" />
@@ -89,17 +89,17 @@ export default function About() {
 						viewport={{ once: true }}
 						transition={{ duration: 0.8 }}
 					>
-						<span className="text-accent text-sm font-medium uppercase tracking-widest mb-4 block">
+						<span className="text-accent text-xs sm:text-sm font-medium uppercase tracking-widest mb-3 sm:mb-4 block">
 							Sobre mí
 						</span>
-						<h2 className="text-4xl md:text-5xl font-bold text-light mb-6 leading-tight">
+						<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-light mb-4 sm:mb-6 leading-tight">
 							Construyo productos digitales que{' '}
 							<span className="text-gradient-accent">
 								funcionan
 							</span>
 						</h2>
 
-						<div className="space-y-4 text-light-400 text-lg leading-relaxed mb-8">
+						<div className="space-y-3 sm:space-y-4 text-light-400 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
 							<p>
 								Soy desarrollador frontend con experiencia
 								sólida en entornos de producto. He trabajado en

@@ -50,7 +50,7 @@ const projects = [
 
 export default function Projects() {
 	return (
-		<section id="proyectos" className="py-32 relative">
+		<section id="proyectos" className="py-16 sm:py-32 relative">
 			{/* Background */}
 			<div className="absolute inset-0 overflow-hidden">
 				{/* Gradient blobs */}
@@ -98,22 +98,22 @@ export default function Projects() {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					transition={{ duration: 0.6 }}
-					className="text-center mb-20"
+					className="text-center mb-12 sm:mb-20"
 				>
-					<span className="text-accent text-sm font-medium uppercase tracking-widest mb-4 block">
+					<span className="text-accent text-xs sm:text-sm font-medium uppercase tracking-widest mb-3 sm:mb-4 block">
 						Proyectos
 					</span>
-					<h2 className="text-4xl md:text-5xl font-bold text-light mb-6">
+					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-light mb-4 sm:mb-6">
 						Trabajo destacado
 					</h2>
-					<p className="text-light-400 text-lg max-w-2xl mx-auto">
+					<p className="text-light-400 text-base sm:text-lg max-w-2xl mx-auto">
 						Proyectos reales que resuelven problemas reales. Cada
 						uno representa un reto único con resultados medibles.
 					</p>
 				</motion.div>
 
 				{/* Projects grid */}
-				<div className="grid md:grid-cols-2 gap-8">
+				<div className="grid md:grid-cols-2 gap-4 sm:gap-8">
 					{projects.map((project, index) => (
 						<motion.article
 							key={project.id}
@@ -123,37 +123,37 @@ export default function Projects() {
 							transition={{ duration: 0.6, delay: index * 0.1 }}
 							className="group relative"
 						>
-							<div className="relative rounded-3xl bg-dark-100 border border-dark-300/50 overflow-hidden transition-all duration-500 hover:border-dark-300 hover-lift">
+							<div className="relative rounded-2xl sm:rounded-3xl bg-dark-100 border border-dark-300/50 overflow-hidden transition-all duration-500 hover:border-dark-300 hover-lift">
 								{/* Image placeholder / Gradient */}
 								<div
-									className={`h-48 bg-gradient-to-br ${project.color} opacity-20`}
+									className={`h-32 sm:h-48 bg-gradient-to-br ${project.color} opacity-20`}
 								>
 									<div className="absolute inset-0 bg-dark-100/80" />
 								</div>
 
 								{/* Content */}
-								<div className="p-8">
+								<div className="p-4 sm:p-8">
 									{/* Category */}
-									<span className="text-xs font-medium text-light-400 uppercase tracking-wider">
+									<span className="text-[10px] sm:text-xs font-medium text-light-400 uppercase tracking-wider">
 										{project.category}
 									</span>
 
 									{/* Title */}
-									<h3 className="text-2xl font-bold text-light mt-2 mb-4 group-hover:text-gradient-accent transition-all">
+									<h3 className="text-lg sm:text-2xl font-bold text-light mt-1.5 sm:mt-2 mb-2 sm:mb-4 group-hover:text-gradient-accent transition-all">
 										{project.title}
 									</h3>
 
 									{/* Description */}
-									<p className="text-light-400 leading-relaxed mb-6">
+									<p className="text-sm sm:text-base text-light-400 leading-relaxed mb-4 sm:mb-6">
 										{project.description}
 									</p>
 
 									{/* Tags */}
-									<div className="flex flex-wrap gap-2 mb-6">
+									<div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
 										{project.tags.map((tag) => (
 											<span
 												key={tag}
-												className="px-3 py-1 text-xs font-medium text-light-300 bg-dark-300/50 rounded-full"
+												className="px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-medium text-light-300 bg-dark-300/50 rounded-full"
 											>
 												{tag}
 											</span>

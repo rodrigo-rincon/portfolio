@@ -34,7 +34,7 @@ const services = [
 
 export default function Services() {
 	return (
-		<section className="py-32 relative overflow-hidden">
+		<section className="py-16 sm:py-32 relative overflow-hidden">
 			{/* Background decoration */}
 			<div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[150px]" />
 
@@ -67,15 +67,15 @@ export default function Services() {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					transition={{ duration: 0.6 }}
-					className="text-center mb-20"
+					className="text-center mb-12 sm:mb-20"
 				>
-					<span className="text-accent text-sm font-medium uppercase tracking-widest mb-4 block">
+					<span className="text-accent text-xs sm:text-sm font-medium uppercase tracking-widest mb-3 sm:mb-4 block">
 						Servicios
 					</span>
-					<h2 className="text-4xl md:text-5xl font-bold text-light mb-6">
+					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-light mb-4 sm:mb-6">
 						Lo que puedo hacer por ti
 					</h2>
-					<p className="text-light-400 text-lg max-w-2xl mx-auto">
+					<p className="text-light-400 text-base sm:text-lg max-w-2xl mx-auto">
 						Combino experiencia técnica con sensibilidad por el
 						diseño para crear productos digitales que destacan.
 					</p>
@@ -92,7 +92,7 @@ export default function Services() {
 							transition={{ duration: 0.5, delay: index * 0.1 }}
 							className="group relative"
 						>
-							<div className="relative p-8 rounded-3xl bg-dark-100 border border-dark-300/50 transition-all duration-500 hover:border-dark-300 hover:bg-dark-200/50 overflow-hidden h-full">
+							<div className="relative p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-dark-100 border border-dark-300/50 transition-all duration-500 hover:border-dark-300 hover:bg-dark-200/50 overflow-hidden h-full">
 								{/* Gradient hover effect */}
 								<div
 									className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
@@ -100,18 +100,18 @@ export default function Services() {
 
 								{/* Icon */}
 								<div
-									className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} p-[1px] mb-6`}
+									className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br ${service.color} p-[1px] mb-4 sm:mb-6`}
 								>
-									<div className="w-full h-full rounded-2xl bg-dark-100 flex items-center justify-center group-hover:bg-dark-200 transition-colors">
-										<service.icon className="w-6 h-6 text-light" />
+									<div className="w-full h-full rounded-xl sm:rounded-2xl bg-dark-100 flex items-center justify-center group-hover:bg-dark-200 transition-colors">
+										<service.icon className="w-5 h-5 sm:w-6 sm:h-6 text-light" />
 									</div>
 								</div>
 
 								{/* Content */}
-								<h3 className="text-xl font-semibold text-light mb-3 group-hover:text-gradient-accent transition-all">
+								<h3 className="text-lg sm:text-xl font-semibold text-light mb-2 sm:mb-3 group-hover:text-gradient-accent transition-all">
 									{service.title}
 								</h3>
-								<p className="text-light-400 leading-relaxed">
+								<p className="text-sm sm:text-base text-light-400 leading-relaxed">
 									{service.description}
 								</p>
 

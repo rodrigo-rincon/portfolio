@@ -33,7 +33,7 @@ export default function Footer() {
 	};
 
 	return (
-		<footer className="relative py-16 border-t border-dark-300/50 overflow-hidden">
+		<footer className="relative py-10 sm:py-16 border-t border-dark-300/50 overflow-hidden">
 			{/* Decorative elements */}
 			<div className="absolute inset-0 pointer-events-none">
 				<div className="absolute top-0 left-1/4 w-1 h-1 bg-accent/20 rounded-full" />
@@ -42,14 +42,14 @@ export default function Footer() {
 			</div>
 
 			<div className="max-w-7xl mx-auto px-6 lg:px-8">
-				<div className="flex flex-col lg:flex-row justify-between items-center gap-8">
+				<div className="flex flex-col lg:flex-row justify-between items-center gap-6 sm:gap-8">
 					{/* Brand */}
-					<div className="flex flex-col items-center lg:items-start gap-3">
+					<div className="flex flex-col items-center lg:items-start gap-2 sm:gap-3">
 						<a
 							href="#"
 							className="group relative flex items-center gap-2"
 						>
-							<span className="relative text-2xl font-bold">
+							<span className="relative text-xl sm:text-2xl font-bold">
 								<span className="bg-gradient-to-r from-accent via-accent-cyan to-accent-purple bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
 									Rocodrilo
 								</span>
@@ -58,18 +58,18 @@ export default function Footer() {
 							{/* Glow effect on hover */}
 							<span className="absolute -inset-2 bg-accent/20 rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 						</a>
-						<p className="text-sm text-light-400">
+						<p className="text-xs sm:text-sm text-light-400">
 							Frontend Developer · Productos SaaS
 						</p>
 					</div>
 
 					{/* Navigation */}
-					<nav className="flex flex-wrap justify-center gap-8">
+					<nav className="flex flex-wrap justify-center gap-4 sm:gap-8">
 						{navLinks.map((link) => (
 							<a
 								key={link.href}
 								href={link.href}
-								className="text-sm text-light-400 hover:text-light transition-colors"
+								className="text-xs sm:text-sm text-light-400 hover:text-light transition-colors"
 							>
 								{link.label}
 							</a>
@@ -77,7 +77,7 @@ export default function Footer() {
 					</nav>
 
 					{/* Social */}
-					<div className="flex items-center gap-3">
+					<div className="flex items-center gap-2 sm:gap-3">
 						{socialLinks.map(({ icon: Icon, href, label }) => (
 							<motion.a
 								key={label}
@@ -86,7 +86,7 @@ export default function Footer() {
 								rel="noopener noreferrer"
 								whileHover={{ scale: 1.1 }}
 								whileTap={{ scale: 0.95 }}
-								className="w-10 h-10 rounded-full bg-dark-200 border border-dark-300 
+								className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-dark-200 border border-dark-300 
                            flex items-center justify-center text-light-400 
                            hover:text-light hover:bg-dark-300 transition-all"
 								aria-label={label}

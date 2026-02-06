@@ -34,7 +34,7 @@ const tools = [
 
 export default function TechStack() {
 	return (
-		<section id="stack" className="py-32 relative overflow-hidden">
+		<section id="stack" className="py-16 sm:py-32 relative overflow-hidden">
 			{/* Background */}
 			<div className="absolute inset-0">
 				<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[150px]" />
@@ -81,22 +81,22 @@ export default function TechStack() {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					transition={{ duration: 0.6 }}
-					className="text-center mb-20"
+					className="text-center mb-12 sm:mb-20"
 				>
-					<span className="text-accent text-sm font-medium uppercase tracking-widest mb-4 block">
+					<span className="text-accent text-xs sm:text-sm font-medium uppercase tracking-widest mb-3 sm:mb-4 block">
 						Stack Tecnológico
 					</span>
-					<h2 className="text-4xl md:text-5xl font-bold text-light mb-6">
+					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-light mb-4 sm:mb-6">
 						Tecnologías que domino
 					</h2>
-					<p className="text-light-400 text-lg max-w-2xl mx-auto">
+					<p className="text-light-400 text-base sm:text-lg max-w-2xl mx-auto">
 						Stack moderno enfocado en rendimiento, escalabilidad y
 						excelente experiencia de desarrollo.
 					</p>
 				</motion.div>
 
 				{/* Skills bars */}
-				<div className="grid md:grid-cols-2 gap-8 mb-20 max-w-4xl mx-auto">
+				<div className="grid md:grid-cols-2 gap-4 sm:gap-8 mb-12 sm:mb-20 max-w-4xl mx-auto">
 					{technologies.map((tech, index) => (
 						<motion.div
 							key={tech.name}
@@ -108,15 +108,15 @@ export default function TechStack() {
 							viewport={{ once: true }}
 							transition={{ duration: 0.5, delay: index * 0.1 }}
 						>
-							<div className="flex justify-between mb-2">
-								<span className="text-light font-medium">
+							<div className="flex justify-between mb-1.5 sm:mb-2">
+								<span className="text-light text-sm sm:text-base font-medium">
 									{tech.name}
 								</span>
-								<span className="text-light-400">
+								<span className="text-light-400 text-sm sm:text-base">
 									{tech.level}%
 								</span>
 							</div>
-							<div className="h-2 bg-dark-300 rounded-full overflow-hidden">
+							<div className="h-1.5 sm:h-2 bg-dark-300 rounded-full overflow-hidden">
 								<motion.div
 									initial={{ width: 0 }}
 									whileInView={{ width: `${tech.level}%` }}
@@ -138,16 +138,16 @@ export default function TechStack() {
 					whileInView={{ opacity: 1 }}
 					viewport={{ once: true }}
 					transition={{ duration: 0.6, delay: 0.3 }}
-					className="relative overflow-hidden py-8"
+					className="relative overflow-hidden py-4 sm:py-8"
 				>
-					<div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-dark to-transparent z-10" />
-					<div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-dark to-transparent z-10" />
+					<div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-dark to-transparent z-10" />
+					<div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-dark to-transparent z-10" />
 
 					<div className="flex animate-marquee">
 						{[...tools, ...tools].map((tool, index) => (
 							<div
 								key={index}
-								className="flex-shrink-0 mx-4 px-6 py-3 rounded-full bg-dark-200 border border-dark-300 text-light-300 text-sm font-medium whitespace-nowrap hover:bg-dark-300 hover:text-light transition-colors"
+								className="shrink-0 mx-2 sm:mx-4 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-dark-200 border border-dark-300 text-light-300 text-xs sm:text-sm font-medium whitespace-nowrap hover:bg-dark-300 hover:text-light transition-colors"
 							>
 								{tool}
 							</div>

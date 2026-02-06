@@ -39,7 +39,13 @@
 
 html {
 	scroll-behavior: smooth;
-	font-size: 18px; /* Base size increase for Titillium Web */
+	font-size: 16px; /* Base size for mobile */
+}
+
+@media (min-width: 640px) {
+	html {
+		font-size: 18px; /* Larger base for desktop */
+	}
 }
 
 body {

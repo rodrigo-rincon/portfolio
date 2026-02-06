@@ -51,10 +51,10 @@ export default function Hero() {
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ delay: 0.4 }}
 						>
-							<h2 className="text-light-400 text-lg mb-2">
+							<h2 className="text-light-400 text-base sm:text-lg mb-2">
 								Hola, soy
 							</h2>
-							<h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4">
+							<h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4">
 								<span className="text-gradient">Rodrigo</span>
 								<br />
 								<span className="text-light">Rincón</span>
@@ -94,20 +94,20 @@ export default function Hero() {
 						>
 							<a
 								href="#proyectos"
-								className="group relative inline-flex items-center gap-3 px-8 py-4 font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_50px_rgba(99,102,241,0.4)]"
+								className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_50px_rgba(99,102,241,0.4)] w-full sm:w-auto"
 							>
 								{/* Gradient background */}
 								<span className="absolute inset-0 bg-gradient-to-r from-accent via-accent-purple to-accent-cyan" />
 								{/* Shine effect */}
 								<span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-								<span className="relative text-white">
+								<span className="relative text-white text-sm sm:text-base">
 									Ver proyectos
 								</span>
 								<ArrowDown className="relative w-4 h-4 text-white transition-transform group-hover:translate-y-1" />
 							</a>
 							<a
 								href="#contacto"
-								className="group relative inline-flex items-center gap-3 px-8 py-4 text-light font-medium rounded-xl overflow-hidden transition-all duration-300 hover:scale-105"
+								className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 text-light font-medium rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 w-full sm:w-auto"
 							>
 								{/* Gradient border */}
 								<span className="absolute inset-0 rounded-xl bg-gradient-to-r from-accent via-accent-purple to-accent-cyan p-[1px]">
@@ -173,19 +173,19 @@ export default function Hero() {
 							<div className="absolute inset-0 bg-accent/30 rounded-full blur-[60px] scale-75" />
 
 							{/* Main visual container - Code/Terminal aesthetic */}
-							<div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px] rounded-3xl overflow-hidden border border-dark-300/50 bg-dark-100/80 backdrop-blur-xl glow">
+							<div className="relative w-[280px] h-[280px] sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px] rounded-2xl md:rounded-3xl overflow-hidden border border-dark-300/50 bg-dark-100/80 backdrop-blur-xl glow">
 								{/* Terminal header */}
-								<div className="flex items-center gap-2 px-4 py-3 border-b border-dark-300/50">
-									<div className="w-3 h-3 rounded-full bg-red-500/80" />
-									<div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-									<div className="w-3 h-3 rounded-full bg-green-500/80" />
-									<span className="ml-3 text-xs text-light-400 font-mono">
+								<div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-3 border-b border-dark-300/50">
+									<div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500/80" />
+									<div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500/80" />
+									<div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500/80" />
+									<span className="ml-2 sm:ml-3 text-[10px] sm:text-xs text-light-400 font-mono">
 										portfolio.tsx
 									</span>
 								</div>
 
 								{/* Code content */}
-								<div className="p-6 font-mono text-sm leading-relaxed">
+								<div className="p-3 sm:p-4 md:p-6 font-mono text-[10px] sm:text-xs md:text-sm leading-relaxed">
 									<div className="text-light-400">
 										<span className="text-purple-400">
 											const
@@ -288,12 +288,12 @@ export default function Hero() {
 								</div>
 							</div>
 
-							{/* Floating badges */}
+							{/* Floating badges - hidden on mobile */}
 							<motion.div
 								initial={{ opacity: 0, x: -20 }}
 								animate={{ opacity: 1, x: 0 }}
 								transition={{ delay: 1 }}
-								className="absolute -left-16 top-8 glass px-4 py-3 rounded-xl animate-float"
+								className="hidden md:block absolute -left-16 lg:-left-20 top-8 glass px-4 py-3 rounded-xl animate-float"
 							>
 								<div className="flex items-center gap-2">
 									<Atom className="w-5 h-5 text-cyan-400" />
@@ -307,7 +307,7 @@ export default function Hero() {
 								initial={{ opacity: 0, x: 20 }}
 								animate={{ opacity: 1, x: 0 }}
 								transition={{ delay: 1.2 }}
-								className="absolute -right-16 top-1/3 glass px-4 py-3 rounded-xl animate-float"
+								className="hidden md:block absolute -right-16 lg:-right-20 top-1/3 glass px-4 py-3 rounded-xl animate-float"
 								style={{ animationDelay: '1s' }}
 							>
 								<div className="flex items-center gap-2">
@@ -322,7 +322,7 @@ export default function Hero() {
 								initial={{ opacity: 0, y: 20 }}
 								animate={{ opacity: 1, y: 0 }}
 								transition={{ delay: 1.4 }}
-								className="absolute left-1/2 -translate-x-1/2 -bottom-12 glass px-4 py-3 rounded-xl animate-float"
+								className="hidden md:block absolute left-1/2 -translate-x-1/2 -bottom-12 glass px-4 py-3 rounded-xl animate-float"
 								style={{ animationDelay: '2s' }}
 							>
 								<div className="flex items-center gap-2">
