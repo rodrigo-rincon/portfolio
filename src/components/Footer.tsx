@@ -100,7 +100,7 @@ export default function Footer() {
 				{/* Bottom */}
 				<div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-12 pt-8 border-t border-dark-300/30">
 					<p className="text-xs text-light-400">
-						© {new Date().getFullYear()} Rodrigo Rincón. Fabricado en el espacio.
+						© 2024 Rodrigo Rincón. Fabricado en el espacio.
 					</p>
 
 					<button
