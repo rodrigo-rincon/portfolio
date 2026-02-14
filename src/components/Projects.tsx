@@ -101,14 +101,14 @@ export default function Projects() {
 					className="text-center mb-12 sm:mb-20"
 				>
 					<span className="text-accent text-xs sm:text-sm font-medium uppercase tracking-widest mb-3 sm:mb-4 block">
-						Proyectos
+						Misiones Completadas
 					</span>
 					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-light mb-4 sm:mb-6">
-						Trabajo destacado
+						Exploraciones exitosas
 					</h2>
 					<p className="text-light-400 text-base sm:text-lg max-w-2xl mx-auto">
-						Proyectos reales que resuelven problemas reales. Cada
-						uno representa un reto único con resultados medibles.
+						Misiones espaciales que han conquistado nuevas galaxias. Cada
+						una representa un viaje único con resultados estelares.
 					</p>
 				</motion.div>
 

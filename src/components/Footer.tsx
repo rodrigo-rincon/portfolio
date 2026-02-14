@@ -1,4 +1,4 @@
-import { Github, Linkedin, Instagram, ArrowUp } from 'lucide-react';
+import { Github, Linkedin, Instagram, Rocket } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const socialLinks = [
@@ -20,11 +20,11 @@ const socialLinks = [
 ];
 
 const navLinks = [
-	{ href: '#about', label: 'Sobre mí' },
-	{ href: '#servicios', label: 'Servicios' },
-	{ href: '#stack', label: 'Stack' },
-	{ href: '#proyectos', label: 'Proyectos' },
-	{ href: '#contacto', label: 'Contacto' },
+	{ href: '#about', label: 'Mi Misión' },
+	{ href: '#servicios', label: 'Servicios Estelares' },
+	{ href: '#stack', label: 'Arsenal' },
+	{ href: '#proyectos', label: 'Misiones' },
+	{ href: '#contacto', label: 'Transmisión' },
 ];
 
 export default function Footer() {
@@ -59,7 +59,7 @@ export default function Footer() {
 							<span className="absolute -inset-2 bg-accent/20 rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 						</a>
 						<p className="text-xs sm:text-sm text-light-400">
-							Frontend Developer · Productos SaaS
+							Frontend Developer · Explorador de Código
 						</p>
 					</div>
 
@@ -100,17 +100,16 @@ export default function Footer() {
 				{/* Bottom */}
 				<div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-12 pt-8 border-t border-dark-300/30">
 					<p className="text-xs text-light-400">
-						© {new Date().getFullYear()} Rodrigo Rincón. Hecho con
-						pasión.
+						© {new Date().getFullYear()} Rodrigo Rincón. Fabricado en el espacio.
 					</p>
 
 					<button
 						onClick={scrollToTop}
 						className="flex items-center gap-2 text-xs text-light-400 hover:text-light transition-colors group"
 					>
-						Volver arriba
-						<span className="w-6 h-6 rounded-full bg-dark-200 border border-dark-300 flex items-center justify-center group-hover:bg-dark-300 transition-all">
-							<ArrowUp className="w-3 h-3" />
+						Despegar
+						<span className="w-6 h-6 rounded-full bg-dark-200 border border-dark-300 flex items-center justify-center group-hover:bg-accent/20 transition-all">
+							<Rocket className="w-3 h-3 rotate-[-45deg] group-hover:rotate-[-90deg] transition-transform" />
 						</span>
 					</button>
 				</div>

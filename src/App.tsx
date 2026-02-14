@@ -7,10 +7,12 @@ import Services from './components/Services';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import StarryBackground from './components/StarryBackground';
 
 function App() {
 	return (
 		<div className="min-h-screen bg-dark relative">
+			<StarryBackground />
 			<Header />
 			<main>
 				<Hero />

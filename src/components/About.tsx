@@ -1,27 +1,43 @@
 import { motion } from 'framer-motion';
-import { MapPin, Calendar, Briefcase } from 'lucide-react';
+import { MapPin, Calendar, Rocket } from 'lucide-react';
 
 const stats = [
-	{ value: '5+', label: 'Años de experiencia' },
-	{ value: '30+', label: 'Proyectos completados' },
-	{ value: '15+', label: 'Clientes satisfechos' },
+	{ value: '5+', label: 'Años en órbita' },
+	{ value: '30+', label: 'Misiones completadas' },
+	{ value: '15+', label: 'Tripulantes satisfechos' },
 ];
 
 export default function About() {
 	return (
-		<section id="about" className="py-16 sm:py-32 relative">
-			{/* Background */}
+		<section id="about" className="py-16 sm:py-32 relative bg-[#050508]">
+			{/* Fondo negro que se mimetiza con la imagen */}
+			<div className="absolute inset-0 bg-gradient-to-b from-dark via-[#050508] to-dark" />
+			
+			{/* Vía Láctea diagonal sutil */}
+			<div className="absolute inset-0 milky-way-gradient opacity-40" />
+			
+			{/* Background decorativo espacial */}
 			<div className="absolute inset-0 overflow-hidden">
-				<div className="absolute bottom-0 left-1/4 w-96 h-96 bg-accent-purple/15 rounded-full blur-[120px]" />
+				{/* Nebulosas */}
+				<div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-accent-purple/10 rounded-full blur-[120px] animate-nebula" />
+				<div className="absolute bottom-0 left-1/4 w-96 h-96 bg-accent-cyan/8 rounded-full blur-[150px] animate-nebula" style={{ animationDelay: '2s' }} />
+				<div className="absolute top-1/2 left-0 w-72 h-72 bg-nebula-blue/6 rounded-full blur-[100px]" />
 
-				{/* Decorative elements */}
-				<div className="absolute top-20 right-20 w-3 h-3 bg-accent/50 rounded-full" />
-				<div className="absolute top-40 right-32 w-2 h-2 bg-accent-cyan/60 rounded-full" />
-				<div className="absolute bottom-32 left-20 w-2.5 h-2.5 bg-accent-purple/50 rounded-full" />
+				{/* Campo de estrellas */}
+				<div className="absolute top-[10%] right-[15%] w-1.5 h-1.5 bg-white/60 rounded-full animate-twinkle" />
+				<div className="absolute top-[20%] right-[25%] w-1 h-1 bg-accent-gold/50 rounded-full animate-twinkle-slow" />
+				<div className="absolute top-[15%] right-[40%] w-2 h-2 bg-accent-cyan/40 rounded-full animate-twinkle" style={{ animationDelay: '0.5s' }} />
+				<div className="absolute top-[30%] right-[10%] w-1 h-1 bg-white/40 rounded-full animate-twinkle-fast" />
+				<div className="absolute top-[5%] right-[60%] w-1.5 h-1.5 bg-accent-purple/50 rounded-full animate-twinkle-slow" style={{ animationDelay: '1s' }} />
+				<div className="absolute top-[40%] left-[5%] w-1 h-1 bg-white/50 rounded-full animate-twinkle" />
+				<div className="absolute top-[60%] left-[10%] w-1.5 h-1.5 bg-accent-gold/40 rounded-full animate-twinkle-slow" style={{ animationDelay: '1.5s' }} />
+				<div className="absolute bottom-[20%] right-[20%] w-2 h-2 bg-accent-cyan/30 rounded-full animate-twinkle" style={{ animationDelay: '0.8s' }} />
+				<div className="absolute bottom-[30%] left-[15%] w-1 h-1 bg-white/60 rounded-full animate-twinkle-fast" />
+				<div className="absolute bottom-[15%] right-[35%] w-1.5 h-1.5 bg-accent-purple/40 rounded-full animate-twinkle-slow" style={{ animationDelay: '2s' }} />
 
 				{/* Grid pattern */}
 				<div
-					className="absolute top-1/4 right-0 w-72 h-72 opacity-[0.08]"
+					className="absolute top-1/4 right-0 w-72 h-72 opacity-[0.06]"
 					style={{
 						backgroundImage:
 							'radial-gradient(circle, #6366f1 1.5px, transparent 1.5px)',
@@ -29,8 +45,20 @@ export default function About() {
 					}}
 				/>
 
-				{/* Decorative line */}
-				<div className="absolute top-1/2 left-0 w-48 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
+				{/* Líneas decorativas cósmicas */}
+				<div className="absolute top-1/3 left-0 w-64 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
+				<div className="absolute bottom-1/3 right-0 w-48 h-px bg-gradient-to-l from-transparent via-accent-cyan/30 to-transparent" />
+				
+				{/* Constelación sutil */}
+				<svg className="absolute top-[15%] right-[5%] w-48 h-48 opacity-20" viewBox="0 0 100 100">
+					<line x1="20" y1="20" x2="50" y2="35" stroke="currentColor" strokeWidth="0.5" className="text-accent-cyan" />
+					<line x1="50" y1="35" x2="80" y2="25" stroke="currentColor" strokeWidth="0.5" className="text-accent-cyan" />
+					<line x1="50" y1="35" x2="60" y2="70" stroke="currentColor" strokeWidth="0.5" className="text-accent-cyan" />
+					<circle cx="20" cy="20" r="2" fill="currentColor" className="text-white/60" />
+					<circle cx="50" cy="35" r="2.5" fill="currentColor" className="text-accent-gold" />
+					<circle cx="80" cy="25" r="2" fill="currentColor" className="text-white/60" />
+					<circle cx="60" cy="70" r="2" fill="currentColor" className="text-white/60" />
+				</svg>
 			</div>
 
 			<div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
@@ -50,8 +78,6 @@ export default function About() {
 								alt="Rodrigo Rincón"
 								className="w-full h-full object-cover"
 							/>
-							{/* Gradient overlay */}
-							<div className="absolute inset-0 bg-linear-to-t from-dark via-dark/20 to-transparent" />
 
 							{/* Floating card - Experience */}
 							<motion.div
@@ -63,14 +89,14 @@ export default function About() {
 							>
 								<div className="flex items-center gap-4">
 									<div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
-										<Briefcase className="w-6 h-6 text-accent" />
+										<Rocket className="w-6 h-6 text-accent" />
 									</div>
 									<div>
 										<p className="text-light font-semibold">
 											Frontend Developer
 										</p>
 										<p className="text-light-400 text-sm">
-											+5 años de experiencia
+											+5 años explorando galaxias
 										</p>
 									</div>
 								</div>
@@ -90,20 +116,20 @@ export default function About() {
 						transition={{ duration: 0.8 }}
 					>
 						<span className="text-accent text-xs sm:text-sm font-medium uppercase tracking-widest mb-3 sm:mb-4 block">
-							Sobre mí
+							Mi Misión
 						</span>
 						<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-light mb-4 sm:mb-6 leading-tight">
-							Construyo productos digitales que{' '}
+							Navegando el cosmos digital para{' '}
 							<span className="text-gradient-accent">
-								funcionan
+								crear maravillas
 							</span>
 						</h2>
 
 						<div className="space-y-3 sm:space-y-4 text-light-400 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
 							<p>
-								Soy desarrollador frontend con experiencia
-								sólida en entornos de producto. He trabajado en
-								startups de salud, plataformas administrativas y
+								Soy un explorador del código con experiencia
+								sólida en entornos de producto. He tripulado
+								naves en startups de salud, plataformas administrativas y
 								herramientas internas donde el código limpio y
 								la buena UX son esenciales.
 							</p>
@@ -125,7 +151,7 @@ export default function About() {
 							</div>
 							<div className="flex items-center gap-2 text-light-300">
 								<Calendar className="w-4 h-4 text-accent" />
-								<span>Disponible inmediato</span>
+								<span>Listo para despegar</span>
 							</div>
 						</div>
 

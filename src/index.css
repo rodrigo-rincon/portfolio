@@ -4,23 +4,28 @@
 	--font-sans: 'Titillium Web', system-ui, -apple-system, sans-serif;
 	--font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
-	--color-dark: #0a0a0a;
-	--color-dark-100: #111111;
-	--color-dark-200: #1a1a1a;
-	--color-dark-300: #2a2a2a;
-	--color-dark-400: #3a3a3a;
+	/* Colores espaciales */
+	--color-dark: #0B0D1A;
+	--color-dark-100: #0F1225;
+	--color-dark-200: #141833;
+	--color-dark-300: #1E2347;
+	--color-dark-400: #2A3158;
 
 	--color-light: #ffffff;
-	--color-light-100: #f5f5f5;
-	--color-light-200: #e5e5e5;
-	--color-light-300: #d4d4d4;
-	--color-light-400: #a3a3a3;
+	--color-light-100: #E8ECFF;
+	--color-light-200: #C4CCFF;
+	--color-light-300: #A0AADD;
+	--color-light-400: #7B88B8;
 
-	--color-accent: #6366f1;
-	--color-accent-light: #818cf8;
-	--color-accent-cyan: #22d3ee;
-	--color-accent-purple: #a855f7;
-	--color-accent-pink: #ec4899;
+	/* Colores de nebulosa */
+	--color-accent: #7C3AED;
+	--color-accent-light: #A78BFA;
+	--color-accent-cyan: #06B6D4;
+	--color-accent-purple: #D946EF;
+	--color-accent-pink: #F472B6;
+	--color-accent-gold: #FDE68A;
+	--color-nebula-blue: #3B82F6;
+	--color-nebula-magenta: #EC4899;
 }
 
 /* Scrollbar */
@@ -179,11 +184,14 @@ body {
 		rgba(99, 102, 241, 0.4),
 		rgba(34, 211, 238, 0.4)
 	);
+	mask:
+		linear-gradient(#fff 0 0) content-box,
+		linear-gradient(#fff 0 0);
 	-webkit-mask:
 		linear-gradient(#fff 0 0) content-box,
 		linear-gradient(#fff 0 0);
-	-webkit-mask-composite: xor;
 	mask-composite: exclude;
+	-webkit-mask-composite: xor;
 	pointer-events: none;
 }
 
@@ -261,4 +269,173 @@ body {
 
 .animate-spin-slow {
 	animation: spin-slow 20s linear infinite;
+}
+
+/* ========== TEMA ESPACIAL ========== */
+
+/* Estrellas titilantes */
+@keyframes twinkle {
+	0%, 100% {
+		opacity: 0.3;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(1.2);
+	}
+}
+
+.animate-twinkle {
+	animation: twinkle 3s ease-in-out infinite;
+}
+
+.animate-twinkle-slow {
+	animation: twinkle 5s ease-in-out infinite;
+}
+
+.animate-twinkle-fast {
+	animation: twinkle 2s ease-in-out infinite;
+}
+
+/* Estrella fugaz */
+@keyframes shooting-star {
+	0% {
+		transform: translateX(0) translateY(0);
+		opacity: 1;
+	}
+	70% {
+		opacity: 1;
+	}
+	100% {
+		transform: translateX(300px) translateY(300px);
+		opacity: 0;
+	}
+}
+
+.animate-shooting-star {
+	animation: shooting-star 3s ease-in-out infinite;
+}
+
+/* Orbita */
+@keyframes orbit {
+	0% {
+		transform: rotate(0deg) translateX(100px) rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg) translateX(100px) rotate(-360deg);
+	}
+}
+
+.animate-orbit {
+	animation: orbit 20s linear infinite;
+}
+
+/* Pulso de nebulosa */
+@keyframes nebula-pulse {
+	0%, 100% {
+		opacity: 0.3;
+		transform: scale(1);
+		filter: blur(60px);
+	}
+	50% {
+		opacity: 0.6;
+		transform: scale(1.1);
+		filter: blur(80px);
+	}
+}
+
+.animate-nebula {
+	animation: nebula-pulse 8s ease-in-out infinite;
+}
+
+/* Flotación espacial (gravedad cero) */
+@keyframes space-float {
+	0%, 100% {
+		transform: translateY(0) translateX(0) rotate(0deg);
+	}
+	25% {
+		transform: translateY(-10px) translateX(5px) rotate(2deg);
+	}
+	50% {
+		transform: translateY(-5px) translateX(-5px) rotate(-1deg);
+	}
+	75% {
+		transform: translateY(-15px) translateX(3px) rotate(1deg);
+	}
+}
+
+.animate-space-float {
+	animation: space-float 6s ease-in-out infinite;
+}
+
+/* Propulsión de cohete */
+@keyframes rocket-thrust {
+	0%, 100% {
+		box-shadow: 0 0 20px rgba(124, 58, 237, 0.5), 0 10px 40px rgba(6, 182, 212, 0.3);
+	}
+	50% {
+		box-shadow: 0 0 40px rgba(124, 58, 237, 0.8), 0 20px 60px rgba(6, 182, 212, 0.5);
+	}
+}
+
+.hover-rocket:hover {
+	animation: rocket-thrust 0.5s ease-in-out infinite;
+}
+
+/* Gradiente de Vía Láctea */
+.milky-way-gradient {
+	background: linear-gradient(
+		135deg,
+		transparent 0%,
+		rgba(124, 58, 237, 0.05) 25%,
+		rgba(59, 130, 246, 0.08) 50%,
+		rgba(217, 70, 239, 0.05) 75%,
+		transparent 100%
+	);
+}
+
+/* Brillo estelar */
+.star-glow {
+	box-shadow: 
+		0 0 10px rgba(253, 230, 138, 0.4),
+		0 0 20px rgba(253, 230, 138, 0.2),
+		0 0 30px rgba(253, 230, 138, 0.1);
+}
+
+/* Anillo planetario */
+.planetary-ring {
+	position: relative;
+}
+
+.planetary-ring::after {
+	content: '';
+	position: absolute;
+	inset: -20px;
+	border: 2px solid rgba(124, 58, 237, 0.3);
+	border-radius: 50%;
+	transform: rotateX(75deg);
+}
+
+/* Efecto portal espacial */
+.space-portal {
+	background: conic-gradient(
+		from 0deg,
+		rgba(124, 58, 237, 0.4),
+		rgba(6, 182, 212, 0.4),
+		rgba(217, 70, 239, 0.4),
+		rgba(59, 130, 246, 0.4),
+		rgba(124, 58, 237, 0.4)
+	);
+	border-radius: 50%;
+	animation: spin-slow 10s linear infinite;
+}
+
+/* Gradiente texto espacial */
+.text-gradient-space {
+	background: linear-gradient(135deg, #A78BFA, #06B6D4, #D946EF, #FDE68A);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	background-size: 300% 300%;
+	animation: gradient 5s ease infinite;
 }

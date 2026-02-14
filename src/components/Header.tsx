@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Rocket } from 'lucide-react';
 
 const navLinks = [
-	{ href: '#about', label: 'Sobre mí' },
-	{ href: '#servicios', label: 'Servicios' },
-	{ href: '#stack', label: 'Stack' },
-	{ href: '#proyectos', label: 'Proyectos' },
+	{ href: '#about', label: 'Mi Misión' },
+	{ href: '#servicios', label: 'Servicios Estelares' },
+	{ href: '#stack', label: 'Arsenal' },
+	{ href: '#proyectos', label: 'Misiones' },
 ];
 
 export default function Header() {
@@ -59,6 +59,7 @@ export default function Header() {
 							href="#"
 							className="group relative flex items-center gap-2"
 						>
+							<Rocket className="w-5 h-5 text-accent-cyan group-hover:rotate-[-20deg] transition-transform" />
 							<span className="relative text-2xl font-bold">
 								<span className="bg-gradient-to-r from-accent via-accent-cyan to-accent-purple bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
 									Rocodrilo
@@ -112,7 +113,7 @@ export default function Header() {
 							<span className="absolute inset-0 bg-gradient-to-r from-accent via-accent-purple to-accent-cyan" />
 							<span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
 							<span className="relative text-white">
-								Contáctame
+								Transmitir
 							</span>
 						</a>
 
@@ -176,7 +177,7 @@ export default function Header() {
 								>
 									<span className="absolute inset-0 bg-gradient-to-r from-accent via-accent-purple to-accent-cyan" />
 									<span className="relative text-white">
-										Contáctame
+										Transmitir
 									</span>
 								</a>
 							</motion.div>

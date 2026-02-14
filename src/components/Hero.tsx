@@ -1,22 +1,24 @@
 import { motion } from 'framer-motion';
 import {
-	ArrowDown,
 	Github,
 	Linkedin,
 	Mail,
-	Atom,
-	FileCode2,
-	Hexagon,
+	Rocket,
+	Satellite,
+	Star,
+	Orbit,
+	Sparkles,
+	Zap,
 } from 'lucide-react';
 
 export default function Hero() {
 	return (
 		<section className="relative min-h-screen overflow-hidden noise">
-			{/* Background gradient blobs */}
+			{/* Nebulosas espaciales de fondo */}
 			<div className="absolute inset-0 overflow-hidden">
-				<div className="absolute top-0 -left-40 w-[600px] h-[600px] bg-accent/20 rounded-full blur-[120px] animate-blob" />
-				<div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent-cyan/15 rounded-full blur-[100px] animate-blob animation-delay-2000" />
-				<div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-accent-purple/10 rounded-full blur-[80px] animate-blob animation-delay-4000" />
+				<div className="absolute top-0 -left-40 w-[600px] h-[600px] bg-accent/25 rounded-full blur-[120px] animate-nebula" />
+				<div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent-cyan/20 rounded-full blur-[100px] animate-nebula" style={{ animationDelay: '3s' }} />
+				<div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-accent-purple/15 rounded-full blur-[80px] animate-nebula" style={{ animationDelay: '5s' }} />
 			</div>
 
 			{/* Main content */}
@@ -29,20 +31,18 @@ export default function Hero() {
 						transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
 						className="order-2 lg:order-1"
 					>
-						{/* Badge */}
+						{/* Badge espacial */}
 						<motion.div
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ delay: 0.3 }}
-							className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark-200/80 border border-dark-300 backdrop-blur-sm mb-8"
+							className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark-200/80 border border-accent/30 backdrop-blur-sm mb-8"
 						>
-							<span className="relative flex h-2 w-2">
-								<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-								<span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-							</span>
+							<Satellite className="w-4 h-4 text-accent-cyan animate-pulse" />
 							<span className="text-sm text-light-300">
-								Disponible para nuevos proyectos
+								En órbita y listo para despegar
 							</span>
+							<Star className="w-3 h-3 text-accent-gold animate-twinkle" />
 						</motion.div>
 
 						{/* Name & Role */}
@@ -80,9 +80,9 @@ export default function Hero() {
 							transition={{ delay: 0.6 }}
 							className="text-light-400 text-lg leading-relaxed max-w-lg mb-10"
 						>
-							Especializado en crear experiencias web
-							excepcionales. +5 años construyendo productos SaaS
-							con React, TypeScript y tecnologías modernas.
+							Explorando el universo del código. +5 años 
+							llevando proyectos a nuevas galaxias con 
+							React, TypeScript y tecnologías de vanguardia.
 						</motion.p>
 
 						{/* CTA Buttons */}
@@ -94,16 +94,16 @@ export default function Hero() {
 						>
 							<a
 								href="#proyectos"
-								className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_50px_rgba(99,102,241,0.4)] w-full sm:w-auto"
+								className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover-rocket w-full sm:w-auto"
 							>
 								{/* Gradient background */}
 								<span className="absolute inset-0 bg-gradient-to-r from-accent via-accent-purple to-accent-cyan" />
 								{/* Shine effect */}
 								<span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+								<Rocket className="relative w-4 h-4 text-white transition-transform group-hover:-translate-y-1 group-hover:rotate-[-20deg]" />
 								<span className="relative text-white text-sm sm:text-base">
-									Ver proyectos
+									Explorar misiones
 								</span>
-								<ArrowDown className="relative w-4 h-4 text-white transition-transform group-hover:translate-y-1" />
 							</a>
 							<a
 								href="#contacto"
@@ -113,7 +113,7 @@ export default function Hero() {
 								<span className="absolute inset-0 rounded-xl bg-gradient-to-r from-accent via-accent-purple to-accent-cyan p-[1px]">
 									<span className="absolute inset-[1px] rounded-xl bg-dark" />
 								</span>
-								<span className="relative">Contáctame</span>
+								<span className="relative">Establecer contacto</span>
 							</a>
 						</motion.div>
 
@@ -125,7 +125,7 @@ export default function Hero() {
 							className="flex items-center gap-4"
 						>
 							<span className="text-sm text-light-400">
-								Sígueme
+								Señales
 							</span>
 							<div className="h-px w-12 bg-dark-300" />
 							<div className="flex items-center gap-3">
@@ -133,25 +133,31 @@ export default function Hero() {
 									{
 										icon: Github,
 										href: 'https://github.com/rodrigo-rincon',
+										label: 'GitHub',
 									},
 									{
 										icon: Linkedin,
 										href: 'https://www.linkedin.com/in/rodrigo-rincon/',
+										label: 'LinkedIn',
 									},
 									{
 										icon: Mail,
 										href: 'mailto:rhodrigorincon@gmail.com',
+										label: 'Email',
 									},
-								].map((social, i) => (
-									<a
-										key={i}
+								].map((social) => (
+									<motion.a
+										key={social.label}
 										href={social.href}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="w-10 h-10 rounded-full bg-dark-200 border border-dark-300 flex items-center justify-center text-light-400 transition-all duration-300 hover:bg-accent hover:border-accent hover:text-light hover:scale-110"
+										whileHover={{ scale: 1.1 }}
+										whileTap={{ scale: 0.95 }}
+										className="w-10 h-10 rounded-full bg-dark-200 border border-dark-300 flex items-center justify-center text-light-400 hover:text-light hover:bg-dark-300 transition-all"
+										aria-label={social.label}
 									>
 										<social.icon className="w-4 h-4" />
-									</a>
+									</motion.a>
 								))}
 							</div>
 						</motion.div>
@@ -288,15 +294,15 @@ export default function Hero() {
 								</div>
 							</div>
 
-							{/* Floating badges - hidden on mobile */}
+							{/* Floating badges espaciales - hidden on mobile */}
 							<motion.div
 								initial={{ opacity: 0, x: -20 }}
 								animate={{ opacity: 1, x: 0 }}
 								transition={{ delay: 1 }}
-								className="hidden md:block absolute -left-16 lg:-left-20 top-8 glass px-4 py-3 rounded-xl animate-float"
+								className="hidden md:block absolute -left-16 lg:-left-20 top-8 glass px-4 py-3 rounded-xl animate-space-float"
 							>
 								<div className="flex items-center gap-2">
-									<Atom className="w-5 h-5 text-cyan-400" />
+									<Orbit className="w-5 h-5 text-cyan-400" />
 									<span className="text-sm font-medium text-light">
 										React
 									</span>
@@ -307,11 +313,11 @@ export default function Hero() {
 								initial={{ opacity: 0, x: 20 }}
 								animate={{ opacity: 1, x: 0 }}
 								transition={{ delay: 1.2 }}
-								className="hidden md:block absolute -right-16 lg:-right-20 top-1/3 glass px-4 py-3 rounded-xl animate-float"
+								className="hidden md:block absolute -right-16 lg:-right-20 top-1/3 glass px-4 py-3 rounded-xl animate-space-float"
 								style={{ animationDelay: '1s' }}
 							>
 								<div className="flex items-center gap-2">
-									<FileCode2 className="w-5 h-5 text-blue-400" />
+									<Zap className="w-5 h-5 text-accent-gold" />
 									<span className="text-sm font-medium text-light">
 										TypeScript
 									</span>
@@ -322,11 +328,11 @@ export default function Hero() {
 								initial={{ opacity: 0, y: 20 }}
 								animate={{ opacity: 1, y: 0 }}
 								transition={{ delay: 1.4 }}
-								className="hidden md:block absolute left-1/2 -translate-x-1/2 -bottom-12 glass px-4 py-3 rounded-xl animate-float"
+								className="hidden md:block absolute left-1/2 -translate-x-1/2 -bottom-12 glass px-4 py-3 rounded-xl animate-space-float"
 								style={{ animationDelay: '2s' }}
 							>
 								<div className="flex items-center gap-2">
-									<Hexagon className="w-5 h-5 text-white" />
+									<Sparkles className="w-5 h-5 text-accent-purple" />
 									<span className="text-sm font-medium text-light">
 										Next.js
 									</span>
@@ -337,7 +343,7 @@ export default function Hero() {
 				</div>
 			</div>
 
-			{/* Scroll indicator */}
+			{/* Scroll indicator - Cohete */}
 			<motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
@@ -350,9 +356,9 @@ export default function Hero() {
 					className="flex flex-col items-center gap-2 text-light-400"
 				>
 					<span className="text-xs uppercase tracking-widest">
-						Scroll
+						Descender
 					</span>
-					<ArrowDown className="w-4 h-4" />
+					<Rocket className="w-4 h-4 rotate-180" />
 				</motion.div>
 			</motion.div>
 		</section>

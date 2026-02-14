@@ -1,40 +1,40 @@
 import { motion } from 'framer-motion';
-import { Code2, Palette, Zap, Globe } from 'lucide-react';
+import { Rocket, Sparkles, Zap, Globe } from 'lucide-react';
 
 const services = [
 	{
-		icon: Code2,
+		icon: Rocket,
 		title: 'Desarrollo Frontend',
 		description:
-			'Aplicaciones web modernas con React, Next.js y TypeScript. Código limpio, mantenible y escalable.',
-		color: 'from-blue-500 to-cyan-500',
+			'Naves espaciales digitales con React, Next.js y TypeScript. Código limpio, mantenible y listo para la velocidad de la luz.',
+		color: 'from-violet-500 to-cyan-500',
 	},
 	{
-		icon: Palette,
+		icon: Sparkles,
 		title: 'UI/UX Implementation',
 		description:
-			'Transformo diseños de Figma en interfaces pixel-perfect con animaciones fluidas y micro-interacciones.',
+			'Transformo diseños de Figma en interfaces de otra galaxia con animaciones fluidas y micro-interacciones estelares.',
 		color: 'from-purple-500 to-pink-500',
 	},
 	{
 		icon: Zap,
-		title: 'Performance',
+		title: 'Performance Warp',
 		description:
-			'Optimización de rendimiento, Core Web Vitals, lazy loading y estrategias de caching avanzadas.',
+			'Propulsión a velocidad warp: Core Web Vitals, lazy loading y estrategias de caching interestelares.',
 		color: 'from-yellow-500 to-orange-500',
 	},
 	{
 		icon: Globe,
-		title: 'Full-Stack',
+		title: 'Full-Stack Orbital',
 		description:
 			'APIs REST/GraphQL, bases de datos, autenticación y despliegue en la nube (AWS, Vercel).',
-		color: 'from-green-500 to-emerald-500',
+		color: 'from-cyan-500 to-emerald-500',
 	},
 ];
 
 export default function Services() {
 	return (
-		<section className="py-16 sm:py-32 relative overflow-hidden">
+		<section id="servicios" className="py-16 sm:py-32 relative overflow-hidden">
 			{/* Background decoration */}
 			<div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[150px]" />
 
@@ -70,14 +70,14 @@ export default function Services() {
 					className="text-center mb-12 sm:mb-20"
 				>
 					<span className="text-accent text-xs sm:text-sm font-medium uppercase tracking-widest mb-3 sm:mb-4 block">
-						Servicios
+						Servicios Estelares
 					</span>
 					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-light mb-4 sm:mb-6">
-						Lo que puedo hacer por ti
+						Mi arsenal espacial
 					</h2>
 					<p className="text-light-400 text-base sm:text-lg max-w-2xl mx-auto">
-						Combino experiencia técnica con sensibilidad por el
-						diseño para crear productos digitales que destacan.
+						Combino tecnología intergaláctica con sensibilidad por el
+						diseño para crear productos digitales de otra dimensión.
 					</p>
 				</motion.div>
 

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Mail, Copy, Check, ArrowUpRight, MessageCircle } from 'lucide-react';
+import { Mail, Copy, Check, Rocket, MessageCircle, Satellite } from 'lucide-react';
 
 export default function Contact() {
 	const [copied, setCopied] = useState(false);
@@ -66,25 +66,23 @@ export default function Contact() {
 					transition={{ duration: 0.6 }}
 					className="text-center"
 				>
-					{/* Badge */}
-					<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark-200/80 border border-dark-300 backdrop-blur-sm mb-8">
-						<span className="relative flex h-2 w-2">
-							<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-							<span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-						</span>
+					{/* Badge espacial */}
+					<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark-200/80 border border-accent/30 backdrop-blur-sm mb-8">
+						<Satellite className="w-4 h-4 text-accent-cyan animate-pulse" />
 						<span className="text-sm text-light-300">
-							Disponible para proyectos
+							Comunicación interestelar activa
 						</span>
 					</div>
 
 					{/* Heading */}
 					<h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-light mb-4 sm:mb-6">
-						¿Tienes un proyecto{' '}
-						<span className="text-gradient-accent">en mente</span>?
+						¿Listo para una{' '}
+						<span className="text-gradient-accent">nueva misión</span>?
 					</h2>
 					<p className="text-light-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-12">
-						Estoy buscando nuevas oportunidades para colaborar en
-						proyectos interesantes. Si tienes una idea, platiquemos.
+						Estoy escaneando el universo en busca de nuevas 
+						aventuras espaciales. Si tienes una misión interesante,
+						establece contacto.
 					</p>
 
 					{/* Email card */}
@@ -104,7 +102,7 @@ export default function Contact() {
 							</div>
 							<div className="text-center sm:text-left">
 								<p className="text-xs sm:text-sm text-light-400 mb-0.5 sm:mb-1">
-									Email
+										Transmisión directa
 								</p>
 								<p className="text-sm sm:text-xl font-semibold text-light break-all sm:break-normal">
 									{email}
@@ -135,16 +133,16 @@ export default function Contact() {
 					<div className="flex flex-col sm:flex-row items-center justify-center gap-4">
 						<a
 							href={`mailto:${email}`}
-							className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_50px_rgba(99,102,241,0.4)] w-full sm:w-auto"
+							className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover-rocket w-full sm:w-auto"
 						>
 							{/* Gradient background */}
 							<span className="absolute inset-0 bg-gradient-to-r from-accent via-accent-purple to-accent-cyan" />
 							{/* Shine effect */}
 							<span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+							<Rocket className="relative w-4 h-4 text-white transition-transform group-hover:-translate-y-1 group-hover:rotate-[-20deg]" />
 							<span className="relative text-white text-sm sm:text-base">
-								Enviar email
+								Iniciar transmisión
 							</span>
-							<ArrowUpRight className="relative w-4 h-4 text-white transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
 						</a>
 						<a
 							href="https://wa.me/529615622104"
