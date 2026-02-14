@@ -8,10 +8,12 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import StarryBackground from './components/StarryBackground';
+import CustomCursor from './components/CustomCursor';
 
 function App() {
 	return (
 		<div className="min-h-screen bg-dark relative">
+			<CustomCursor />
 			<StarryBackground />
 			<Header />
 			<main>

@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "mission": "Mi Misión",
+    "services": "Servicios Estelares",
+    "arsenal": "Arsenal",
+    "missions": "Misiones",
+    "transmission": "Transmisión"
+  },
+  "hero": {
+    "badge": "En órbita y listo para despegar",
+    "greeting": "Hola, soy",
+    "role": "Frontend Developer",
+    "description": "Explorando el universo del código. +5 años llevando proyectos a nuevas galaxias con React, TypeScript y tecnologías de vanguardia.",
+    "cta": {
+      "explore": "Explorar misiones",
+      "contact": "Establecer contacto"
+    },
+    "signals": "Señales"
+  },
+  "about": {
+    "badge": "Mi Misión",
+    "title": "Navegando el cosmos digital para",
+    "titleHighlight": "crear maravillas",
+    "description1": "Soy un explorador del código con experiencia sólida en entornos de producto. He tripulado naves en startups de salud, plataformas administrativas y herramientas internas donde el código limpio y la buena UX son esenciales.",
+    "description2": "Mi enfoque combina",
+    "description2Highlight": "criterio técnico con sensibilidad de diseño",
+    "description2End": ". Entiendo que un buen producto no solo funciona bien — también se siente bien para quien lo usa.",
+    "location": "México",
+    "status": "Listo para despegar",
+    "stats": {
+      "years": "Años en órbita",
+      "projects": "Misiones completadas",
+      "clients": "Tripulantes satisfechos"
+    },
+    "card": {
+      "title": "Frontend Developer",
+      "subtitle": "+5 años explorando galaxias"
+    }
+  },
+  "services": {
+    "badge": "Servicios Estelares",
+    "title": "Soluciones que orbitan",
+    "titleHighlight": "tus necesidades",
+    "items": {
+      "frontend": {
+        "title": "Desarrollo Frontend",
+        "description": "Interfaces espaciales con React, TypeScript y las últimas tecnologías de la flota estelar."
+      },
+      "responsive": {
+        "title": "Diseño Responsive",
+        "description": "Experiencias que se adaptan a cualquier nave, desde satélites móviles hasta estaciones espaciales."
+      },
+      "performance": {
+        "title": "Optimización",
+        "description": "Velocidad de cohete. Optimizo cada pixel para que tu web despegue sin fricción."
+      },
+      "ux": {
+        "title": "UX/UI Integration",
+        "description": "Traduzco diseños en experiencias interactivas que conectan con los tripulantes."
+      }
+    }
+  },
+  "stack": {
+    "badge": "Arsenal Espacial",
+    "title": "Tecnología de la nave",
+    "description": "Armas y herramientas de vanguardia para conquistar cualquier desafío intergaláctico."
+  },
+  "projects": {
+    "badge": "Misiones Completadas",
+    "title": "Exploraciones exitosas",
+    "description": "Misiones espaciales que han conquistado nuevas galaxias. Cada una representa un viaje único con resultados estelares.",
+    "viewProject": "Ver proyecto",
+    "viewMore": "Ver más en GitHub"
+  },
+  "contact": {
+    "badge": "Comunicación interestelar activa",
+    "title": "¿Listo para una",
+    "titleHighlight": "nueva misión",
+    "description": "Estoy escaneando el universo en busca de nuevas aventuras espaciales. Si tienes una misión interesante, establece contacto.",
+    "email": {
+      "label": "Transmisión directa"
+    },
+    "cta": {
+      "send": "Iniciar transmisión",
+      "whatsapp": "WhatsApp"
+    },
+    "copied": "¡Copiado!"
+  },
+  "footer": {
+    "tagline": "Frontend Developer · Explorador de Código",
+    "copyright": "Fabricado en el espacio.",
+    "backToTop": "Despegar"
+  }
+}

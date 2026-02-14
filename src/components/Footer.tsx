@@ -1,5 +1,6 @@
 import { Github, Linkedin, Instagram, Rocket } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const socialLinks = [
 	{
@@ -19,15 +20,16 @@ const socialLinks = [
 	},
 ];
 
-const navLinks = [
-	{ href: '#about', label: 'Mi Misión' },
-	{ href: '#servicios', label: 'Servicios Estelares' },
-	{ href: '#stack', label: 'Arsenal' },
-	{ href: '#proyectos', label: 'Misiones' },
-	{ href: '#contacto', label: 'Transmisión' },
-];
-
 export default function Footer() {
+	const { t } = useTranslation();
+
+	const navLinksTranslated = [
+		{ href: '#about', label: t('nav.mission') },
+		{ href: '#servicios', label: t('nav.services') },
+		{ href: '#stack', label: t('nav.arsenal') },
+		{ href: '#proyectos', label: t('nav.missions') },
+		{ href: '#contacto', label: t('nav.contact') },
+	];
 	const scrollToTop = () => {
 		window.scrollTo({ top: 0, behavior: 'smooth' });
 	};
@@ -59,13 +61,13 @@ export default function Footer() {
 							<span className="absolute -inset-2 bg-accent/20 rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 						</a>
 						<p className="text-xs sm:text-sm text-light-400">
-							Frontend Developer · Explorador de Código
+							{t('footer.tagline')}
 						</p>
 					</div>
 
 					{/* Navigation */}
 					<nav className="flex flex-wrap justify-center gap-4 sm:gap-8">
-						{navLinks.map((link) => (
+						{navLinksTranslated.map((link) => (
 							<a
 								key={link.href}
 								href={link.href}
@@ -100,14 +102,14 @@ export default function Footer() {
 				{/* Bottom */}
 				<div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-12 pt-8 border-t border-dark-300/30">
 					<p className="text-xs text-light-400">
-						© 2024 Rodrigo Rincón. Fabricado en el espacio.
+						{t('footer.copyright')}
 					</p>
 
 					<button
 						onClick={scrollToTop}
 						className="flex items-center gap-2 text-xs text-light-400 hover:text-light transition-colors group"
 					>
-						Despegar
+						{t('footer.backToTop')}
 						<span className="w-6 h-6 rounded-full bg-dark-200 border border-dark-300 flex items-center justify-center group-hover:bg-accent/20 transition-all">
 							<Rocket className="w-3 h-3 rotate-[-45deg] group-hover:rotate-[-90deg] transition-transform" />
 						</span>

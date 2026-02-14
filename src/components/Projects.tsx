@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight, ExternalLink } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const projects = [
 	{
@@ -49,6 +50,8 @@ const projects = [
 ];
 
 export default function Projects() {
+	const { t } = useTranslation();
+
 	return (
 		<section id="proyectos" className="py-16 sm:py-32 relative">
 			{/* Background */}
@@ -85,6 +88,44 @@ export default function Projects() {
 					<div className="w-10 h-0.5 bg-accent-cyan/30" />
 					<div className="w-0.5 h-10 bg-accent-cyan/30" />
 				</div>
+
+				{/* Planeta púrpura con anillo */}
+				<motion.div
+					className="absolute top-[15%] left-[5%] hidden lg:block"
+					animate={{ y: [0, -15, 0], rotate: [0, 3, 0] }}
+					transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+				>
+					<svg width="120" height="120" viewBox="0 0 120 120" className="opacity-[0.08]">
+						<defs>
+							<linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+								<stop offset="0%" stopColor="#a855f7" />
+								<stop offset="40%" stopColor="#7c3aed" />
+								<stop offset="100%" stopColor="#2e1065" />
+							</linearGradient>
+							<radialGradient id="purpleShine" cx="35%" cy="35%" r="50%">
+								<stop offset="0%" stopColor="#c084fc" stopOpacity="0.8" />
+								<stop offset="100%" stopColor="transparent" />
+							</radialGradient>
+							<linearGradient id="ringGradPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+								<stop offset="0%" stopColor="#7c3aed" stopOpacity="0.1" />
+								<stop offset="30%" stopColor="#a855f7" stopOpacity="0.5" />
+								<stop offset="70%" stopColor="#a855f7" stopOpacity="0.5" />
+								<stop offset="100%" stopColor="#7c3aed" stopOpacity="0.1" />
+							</linearGradient>
+						</defs>
+						{/* Anillo exterior - detrás */}
+						<ellipse cx="60" cy="60" rx="55" ry="15" fill="none" stroke="url(#ringGradPurple)" strokeWidth="3" transform="rotate(-15 60 60)" />
+						{/* Planeta */}
+						<circle cx="60" cy="60" r="28" fill="url(#purpleGrad)" />
+						<circle cx="60" cy="60" r="28" fill="url(#purpleShine)" />
+						{/* Bandas atmosféricas */}
+						<ellipse cx="60" cy="50" rx="25" ry="4" fill="rgba(139, 92, 246, 0.3)" />
+						<ellipse cx="60" cy="65" rx="22" ry="3" fill="rgba(167, 139, 250, 0.25)" />
+						<ellipse cx="60" cy="75" rx="18" ry="2" fill="rgba(139, 92, 246, 0.2)" />
+						{/* Anillo interior - frente */}
+						<ellipse cx="60" cy="60" rx="42" ry="10" fill="none" stroke="url(#ringGradPurple)" strokeWidth="2" transform="rotate(-15 60 60)" />
+					</svg>
+				</motion.div>
 			</div>
 			<div className="absolute inset-0 overflow-hidden">
 				<div className="absolute top-0 left-1/4 w-96 h-96 bg-accent-purple/10 rounded-full blur-[150px]" />
@@ -101,14 +142,13 @@ export default function Projects() {
 					className="text-center mb-12 sm:mb-20"
 				>
 					<span className="text-accent text-xs sm:text-sm font-medium uppercase tracking-widest mb-3 sm:mb-4 block">
-						Misiones Completadas
+						{t('projects.badge')}
 					</span>
 					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-light mb-4 sm:mb-6">
-						Exploraciones exitosas
+						{t('projects.title')}
 					</h2>
 					<p className="text-light-400 text-base sm:text-lg max-w-2xl mx-auto">
-						Misiones espaciales que han conquistado nuevas galaxias. Cada
-						una representa un viaje único con resultados estelares.
+						{t('projects.description')}
 					</p>
 				</motion.div>
 
@@ -182,7 +222,7 @@ export default function Projects() {
 										href={project.url}
 										className="inline-flex items-center gap-2 text-light font-medium group/link"
 									>
-										Ver proyecto
+										{t('projects.viewProject')}
 										<ArrowUpRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
 									</a>
 								</div>
@@ -215,7 +255,7 @@ export default function Projects() {
 							<span className="absolute inset-[1px] rounded-xl bg-dark" />
 						</span>
 						<ExternalLink className="relative w-5 h-5" />
-						<span className="relative">Ver más en GitHub</span>
+						<span className="relative">{t('projects.viewMore')}</span>
 					</a>
 				</motion.div>
 			</div>

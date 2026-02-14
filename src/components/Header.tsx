@@ -1,18 +1,21 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Rocket } from 'lucide-react';
-
-const navLinks = [
-	{ href: '#about', label: 'Mi Misión' },
-	{ href: '#servicios', label: 'Servicios Estelares' },
-	{ href: '#stack', label: 'Arsenal' },
-	{ href: '#proyectos', label: 'Misiones' },
-];
+import LanguageToggle from './LanguageToggle';
 
 export default function Header() {
+	const { t } = useTranslation();
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const [activeSection, setActiveSection] = useState('');
+
+	const navLinks = [
+		{ href: '#about', label: t('nav.mission') },
+		{ href: '#servicios', label: t('nav.services') },
+		{ href: '#stack', label: t('nav.arsenal') },
+		{ href: '#proyectos', label: t('nav.missions') },
+	];
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -105,17 +108,10 @@ export default function Header() {
 							})}
 						</ul>
 
-						{/* CTA */}
-						<a
-							href="#contacto"
-							className="group hidden md:inline-flex relative px-6 py-3 font-medium rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(99,102,241,0.4)]"
-						>
-							<span className="absolute inset-0 bg-gradient-to-r from-accent via-accent-purple to-accent-cyan" />
-							<span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-							<span className="relative text-white">
-								Transmitir
-							</span>
-						</a>
+						{/* CTA + Language Toggle */}
+						<div className="hidden md:flex items-center gap-4">
+							<LanguageToggle />
+						</div>
 
 						{/* Mobile Menu Button */}
 						<button
@@ -138,50 +134,163 @@ export default function Header() {
 			<AnimatePresence>
 				{isMobileMenuOpen && (
 					<motion.div
-						initial={{ opacity: 0, y: -20 }}
-						animate={{ opacity: 1, y: 0 }}
-						exit={{ opacity: 0, y: -20 }}
-						className="fixed inset-0 z-40 bg-dark/95 backdrop-blur-xl pt-24 md:hidden"
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						exit={{ opacity: 0 }}
+						className="fixed inset-0 z-40 bg-dark/98 backdrop-blur-xl pt-24 md:hidden overflow-hidden"
 					>
-						<nav className="px-6">
-							<ul className="space-y-4">
+						{/* Space background effects */}
+						<div className="absolute inset-0 pointer-events-none">
+							{/* Gradient orbs */}
+							<motion.div
+								animate={{
+									scale: [1, 1.2, 1],
+									opacity: [0.3, 0.5, 0.3],
+								}}
+								transition={{
+									duration: 4,
+									repeat: Infinity,
+									ease: 'easeInOut',
+								}}
+								className="absolute top-20 -right-20 w-64 h-64 bg-accent/20 rounded-full blur-[100px]"
+							/>
+							<motion.div
+								animate={{
+									scale: [1.2, 1, 1.2],
+									opacity: [0.2, 0.4, 0.2],
+								}}
+								transition={{
+									duration: 5,
+									repeat: Infinity,
+									ease: 'easeInOut',
+								}}
+								className="absolute bottom-40 -left-20 w-48 h-48 bg-accent-purple/20 rounded-full blur-[80px]"
+							/>
+							<motion.div
+								animate={{
+									scale: [1, 1.3, 1],
+									opacity: [0.15, 0.3, 0.15],
+								}}
+								transition={{
+									duration: 6,
+									repeat: Infinity,
+									ease: 'easeInOut',
+								}}
+								className="absolute top-1/2 right-10 w-32 h-32 bg-accent-cyan/20 rounded-full blur-[60px]"
+							/>
+
+							{/* Floating stars */}
+							{[...Array(12)].map((_, i) => (
+								<motion.div
+									key={i}
+									initial={{ opacity: 0 }}
+									animate={{
+										opacity: [0.2, 0.8, 0.2],
+										scale: [1, 1.2, 1],
+									}}
+									transition={{
+										duration: 2 + Math.random() * 2,
+										repeat: Infinity,
+										delay: Math.random() * 2,
+									}}
+									className="absolute w-1 h-1 bg-white rounded-full"
+									style={{
+										top: `${10 + Math.random() * 80}%`,
+										left: `${5 + Math.random() * 90}%`,
+									}}
+								/>
+							))}
+
+							{/* Grid pattern */}
+							<div
+								className="absolute inset-0 opacity-[0.03]"
+								style={{
+									backgroundImage:
+										'linear-gradient(to right, #6366f1 1px, transparent 1px), linear-gradient(to bottom, #6366f1 1px, transparent 1px)',
+									backgroundSize: '40px 40px',
+								}}
+							/>
+						</div>
+
+						<nav className="px-6 relative z-10">
+							<ul className="space-y-2">
 								{navLinks.map((link, index) => (
 									<motion.li
 										key={link.href}
-										initial={{ opacity: 0, x: -20 }}
-										animate={{ opacity: 1, x: 0 }}
-										transition={{ delay: index * 0.1 }}
+										initial={{ opacity: 0, x: -30, filter: 'blur(10px)' }}
+										animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+										transition={{
+											delay: index * 0.1,
+											type: 'spring',
+											stiffness: 100,
+										}}
 									>
 										<a
 											href={link.href}
 											onClick={() =>
 												setIsMobileMenuOpen(false)
 											}
-											className="block text-2xl font-medium text-light py-3 border-b border-dark-300"
+											className="group relative block text-2xl font-medium text-light py-4 px-4 rounded-xl transition-all duration-300 hover:bg-dark-200/50 overflow-hidden"
 										>
-											{link.label}
+											{/* Hover gradient line */}
+											<span className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-accent via-accent-cyan to-accent-purple rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+											
+											{/* Hover background glow */}
+											<span className="absolute inset-0 bg-gradient-to-r from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+											
+											<span className="relative flex items-center gap-3">
+												{/* Animated dot */}
+												<motion.span
+													className="w-2 h-2 rounded-full bg-gradient-to-r from-accent to-accent-cyan"
+													animate={{
+														scale: [1, 1.2, 1],
+														opacity: [0.5, 1, 0.5],
+													}}
+													transition={{
+														duration: 2,
+														repeat: Infinity,
+														delay: index * 0.2,
+													}}
+												/>
+												{link.label}
+											</span>
 										</a>
 									</motion.li>
 								))}
 							</ul>
+
+							{/* Decorative line */}
 							<motion.div
-								initial={{ opacity: 0 }}
-								animate={{ opacity: 1 }}
-								transition={{ delay: 0.4 }}
-								className="mt-8"
+								initial={{ scaleX: 0 }}
+								animate={{ scaleX: 1 }}
+								transition={{ delay: 0.5, duration: 0.8 }}
+								className="h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent my-8"
+							/>
+
+							{/* Language toggle with label */}
+							<motion.div
+								initial={{ opacity: 0, y: 20 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ delay: 0.6 }}
+								className="flex flex-col items-center gap-3"
 							>
-								<a
-									href="#contacto"
-									onClick={() => setIsMobileMenuOpen(false)}
-									className="group relative block w-full py-4 font-medium rounded-xl text-center overflow-hidden"
-								>
-									<span className="absolute inset-0 bg-gradient-to-r from-accent via-accent-purple to-accent-cyan" />
-									<span className="relative text-white">
-										Transmitir
-									</span>
-								</a>
+								<span className="text-xs text-light-400 uppercase tracking-widest">
+									{t('nav.mission').includes('Mission') ? 'Language' : 'Idioma'}
+								</span>
+								<LanguageToggle />
 							</motion.div>
 						</nav>
+
+						{/* Bottom decoration - outside nav */}
+						<motion.div
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							transition={{ delay: 0.8 }}
+							className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2"
+						>
+							<Rocket className="w-4 h-4 text-accent-cyan/50 rotate-[-45deg]" />
+							<span className="text-xs text-light-400/50">Rocodrilo</span>
+						</motion.div>
 					</motion.div>
 				)}
 			</AnimatePresence>

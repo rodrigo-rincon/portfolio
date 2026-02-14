@@ -439,3 +439,75 @@ body {
 	background-size: 300% 300%;
 	animation: gradient 5s ease infinite;
 }
+
+/* Custom Cursor Styles */
+.cursor-dot {
+	position: fixed;
+	width: 10px;
+	height: 10px;
+	background: radial-gradient(circle, #22d3ee 0%, #7C3AED 100%);
+	border-radius: 50%;
+	pointer-events: none;
+	z-index: 9999;
+	transition: transform 0.1s ease;
+	box-shadow: 
+		0 0 10px rgba(34, 211, 238, 0.8),
+		0 0 20px rgba(34, 211, 238, 0.6),
+		0 0 30px rgba(124, 58, 237, 0.4),
+		0 0 40px rgba(124, 58, 237, 0.2);
+	animation: cursor-pulse 2s ease-in-out infinite;
+}
+
+.cursor-outline {
+	position: fixed;
+	width: 40px;
+	height: 40px;
+	border: 2px solid rgba(34, 211, 238, 0.5);
+	border-radius: 50%;
+	pointer-events: none;
+	z-index: 9998;
+	transition: width 0.15s ease-out, height 0.15s ease-out, border-color 0.15s ease-out, background 0.15s ease-out, box-shadow 0.15s ease-out;
+	box-shadow: 
+		0 0 15px rgba(34, 211, 238, 0.3),
+		0 0 30px rgba(124, 58, 237, 0.2),
+		inset 0 0 10px rgba(34, 211, 238, 0.1);
+	background: radial-gradient(circle, rgba(34, 211, 238, 0.05) 0%, transparent 70%);
+}
+
+.cursor-outline.hovering {
+	width: 60px;
+	height: 60px;
+	border-color: rgba(124, 58, 237, 0.6);
+	background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+	box-shadow: 
+		0 0 20px rgba(124, 58, 237, 0.5),
+		0 0 40px rgba(217, 70, 239, 0.3),
+		0 0 60px rgba(124, 58, 237, 0.2),
+		inset 0 0 15px rgba(124, 58, 237, 0.2);
+}
+
+@keyframes cursor-pulse {
+	0%, 100% {
+		transform: scale(1);
+		box-shadow: 
+			0 0 10px rgba(34, 211, 238, 0.8),
+			0 0 20px rgba(34, 211, 238, 0.6),
+			0 0 30px rgba(124, 58, 237, 0.4),
+			0 0 40px rgba(124, 58, 237, 0.2);
+	}
+	50% {
+		transform: scale(1.2);
+		box-shadow: 
+			0 0 15px rgba(34, 211, 238, 1),
+			0 0 30px rgba(34, 211, 238, 0.8),
+			0 0 45px rgba(124, 58, 237, 0.6),
+			0 0 60px rgba(124, 58, 237, 0.4);
+	}
+}
+
+/* Ocultar cursor por defecto en desktop */
+@media (pointer: fine) {
+	* {
+		cursor: none !important;
+	}
+}

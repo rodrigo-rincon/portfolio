@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Mail, Copy, Check, Rocket, MessageCircle, Satellite } from 'lucide-react';
 
 export default function Contact() {
+	const { t } = useTranslation();
 	const [copied, setCopied] = useState(false);
 	const email = 'rhodrigorincon@gmail.com';
 
@@ -70,20 +72,18 @@ export default function Contact() {
 					<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark-200/80 border border-accent/30 backdrop-blur-sm mb-8">
 						<Satellite className="w-4 h-4 text-accent-cyan animate-pulse" />
 						<span className="text-sm text-light-300">
-							Comunicación interestelar activa
+							{t('contact.badge')}
 						</span>
 					</div>
 
 					{/* Heading */}
 					<h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-light mb-4 sm:mb-6">
-						¿Listo para una{' '}
-						<span className="text-gradient-accent">nueva misión</span>?
-					</h2>
-					<p className="text-light-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-12">
-						Estoy escaneando el universo en busca de nuevas 
-						aventuras espaciales. Si tienes una misión interesante,
-						establece contacto.
-					</p>
+							{t('contact.title')}{' '}
+							<span className="text-gradient-accent">{t('contact.titleHighlight')}</span>?
+						</h2>
+						<p className="text-light-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-12">
+							{t('contact.description')}
+						</p>
 
 					{/* Email card */}
 					<motion.div
@@ -102,7 +102,7 @@ export default function Contact() {
 							</div>
 							<div className="text-center sm:text-left">
 								<p className="text-xs sm:text-sm text-light-400 mb-0.5 sm:mb-1">
-										Transmisión directa
+										{t('contact.email.label')}
 								</p>
 								<p className="text-sm sm:text-xl font-semibold text-light break-all sm:break-normal">
 									{email}
@@ -123,7 +123,7 @@ export default function Contact() {
 									animate={{ opacity: 1, y: 0 }}
 									className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-sm text-green-500"
 								>
-									¡Copiado!
+									{t('contact.copied')}
 								</motion.span>
 							)}
 						</button>
@@ -141,7 +141,7 @@ export default function Contact() {
 							<span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
 							<Rocket className="relative w-4 h-4 text-white transition-transform group-hover:-translate-y-1 group-hover:rotate-[-20deg]" />
 							<span className="relative text-white text-sm sm:text-base">
-								Iniciar transmisión
+								{t('contact.cta.send')}
 							</span>
 						</a>
 						<a
@@ -155,7 +155,7 @@ export default function Contact() {
 								<span className="absolute inset-[1px] rounded-xl bg-dark" />
 							</span>
 							<MessageCircle className="relative w-4 h-4" />
-							<span className="relative">WhatsApp</span>
+							<span className="relative">{t('contact.cta.whatsapp')}</span>
 						</a>
 					</div>
 				</motion.div>

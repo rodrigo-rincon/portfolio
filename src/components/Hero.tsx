@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import {
 	Github,
 	Linkedin,
@@ -12,6 +13,8 @@ import {
 } from 'lucide-react';
 
 export default function Hero() {
+	const { t } = useTranslation();
+	
 	return (
 		<section className="relative min-h-screen overflow-hidden noise">
 			{/* Nebulosas espaciales de fondo */}
@@ -40,7 +43,7 @@ export default function Hero() {
 						>
 							<Satellite className="w-4 h-4 text-accent-cyan animate-pulse" />
 							<span className="text-sm text-light-300">
-								En órbita y listo para despegar
+								{t('hero.badge')}
 							</span>
 							<Star className="w-3 h-3 text-accent-gold animate-twinkle" />
 						</motion.div>
@@ -52,7 +55,7 @@ export default function Hero() {
 							transition={{ delay: 0.4 }}
 						>
 							<h2 className="text-light-400 text-base sm:text-lg mb-2">
-								Hola, soy
+								{t('hero.greeting')}
 							</h2>
 							<h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4">
 								<span className="text-gradient">Rodrigo</span>
@@ -69,7 +72,7 @@ export default function Hero() {
 							className="mb-6"
 						>
 							<span className="text-2xl md:text-3xl font-medium text-gradient-accent">
-								Frontend Developer
+								{t('hero.role')}
 							</span>
 						</motion.div>
 
@@ -80,9 +83,7 @@ export default function Hero() {
 							transition={{ delay: 0.6 }}
 							className="text-light-400 text-lg leading-relaxed max-w-lg mb-10"
 						>
-							Explorando el universo del código. +5 años 
-							llevando proyectos a nuevas galaxias con 
-							React, TypeScript y tecnologías de vanguardia.
+							{t('hero.description')}
 						</motion.p>
 
 						{/* CTA Buttons */}
@@ -102,7 +103,7 @@ export default function Hero() {
 								<span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
 								<Rocket className="relative w-4 h-4 text-white transition-transform group-hover:-translate-y-1 group-hover:rotate-[-20deg]" />
 								<span className="relative text-white text-sm sm:text-base">
-									Explorar misiones
+									{t('hero.cta.explore')}
 								</span>
 							</a>
 							<a
@@ -113,7 +114,7 @@ export default function Hero() {
 								<span className="absolute inset-0 rounded-xl bg-gradient-to-r from-accent via-accent-purple to-accent-cyan p-[1px]">
 									<span className="absolute inset-[1px] rounded-xl bg-dark" />
 								</span>
-								<span className="relative">Establecer contacto</span>
+								<span className="relative">{t('hero.cta.contact')}</span>
 							</a>
 						</motion.div>
 
@@ -125,7 +126,7 @@ export default function Hero() {
 							className="flex items-center gap-4"
 						>
 							<span className="text-sm text-light-400">
-								Señales
+								{t('hero.signals')}
 							</span>
 							<div className="h-px w-12 bg-dark-300" />
 							<div className="flex items-center gap-3">

@@ -1,38 +1,37 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Rocket, Sparkles, Zap, Globe } from 'lucide-react';
 
-const services = [
-	{
-		icon: Rocket,
-		title: 'Desarrollo Frontend',
-		description:
-			'Naves espaciales digitales con React, Next.js y TypeScript. Código limpio, mantenible y listo para la velocidad de la luz.',
-		color: 'from-violet-500 to-cyan-500',
-	},
-	{
-		icon: Sparkles,
-		title: 'UI/UX Implementation',
-		description:
-			'Transformo diseños de Figma en interfaces de otra galaxia con animaciones fluidas y micro-interacciones estelares.',
-		color: 'from-purple-500 to-pink-500',
-	},
-	{
-		icon: Zap,
-		title: 'Performance Warp',
-		description:
-			'Propulsión a velocidad warp: Core Web Vitals, lazy loading y estrategias de caching interestelares.',
-		color: 'from-yellow-500 to-orange-500',
-	},
-	{
-		icon: Globe,
-		title: 'Full-Stack Orbital',
-		description:
-			'APIs REST/GraphQL, bases de datos, autenticación y despliegue en la nube (AWS, Vercel).',
-		color: 'from-cyan-500 to-emerald-500',
-	},
-];
-
 export default function Services() {
+	const { t } = useTranslation();
+	
+	const services = [
+		{
+			icon: Rocket,
+			title: t('services.items.frontend.title'),
+			description: t('services.items.frontend.description'),
+			color: 'from-violet-500 to-cyan-500',
+		},
+		{
+			icon: Sparkles,
+			title: t('services.items.ux.title'),
+			description: t('services.items.ux.description'),
+			color: 'from-purple-500 to-pink-500',
+		},
+		{
+			icon: Zap,
+			title: t('services.items.performance.title'),
+			description: t('services.items.performance.description'),
+			color: 'from-yellow-500 to-orange-500',
+		},
+		{
+			icon: Globe,
+			title: t('services.items.responsive.title'),
+			description: t('services.items.responsive.description'),
+			color: 'from-cyan-500 to-emerald-500',
+		},
+	];
+
 	return (
 		<section id="servicios" className="py-16 sm:py-32 relative overflow-hidden">
 			{/* Background decoration */}
@@ -42,6 +41,39 @@ export default function Services() {
 			<div className="absolute top-32 left-10 w-24 h-24 border-2 border-accent/20 rounded-full" />
 			<div className="absolute top-44 left-20 w-12 h-12 border border-accent-cyan/25 rounded-full" />
 			<div className="absolute bottom-40 right-20 w-40 h-40 border-2 border-accent-purple/15 rotate-45" />
+
+			{/* Planeta Tierra/Agua */}
+			<motion.div
+				className="absolute top-[18%] right-[6%] hidden md:block"
+				animate={{ y: [0, -8, 0], rotate: [0, 360] }}
+				transition={{ 
+					y: { duration: 8, repeat: Infinity, ease: 'easeInOut' },
+					rotate: { duration: 60, repeat: Infinity, ease: 'linear' }
+				}}
+			>
+				<svg width="70" height="70" viewBox="0 0 70 70" className="opacity-[0.15]">
+					<defs>
+						<linearGradient id="earthGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+							<stop offset="0%" stopColor="#06B6D4" />
+							<stop offset="40%" stopColor="#0891B2" />
+							<stop offset="100%" stopColor="#164E63" />
+						</linearGradient>
+						<radialGradient id="earthShine" cx="30%" cy="30%" r="50%">
+							<stop offset="0%" stopColor="white" stopOpacity="0.5" />
+							<stop offset="100%" stopColor="white" stopOpacity="0" />
+						</radialGradient>
+					</defs>
+					{/* Cuerpo */}
+					<circle cx="35" cy="35" r="28" fill="url(#earthGrad)" />
+					<circle cx="35" cy="35" r="28" fill="url(#earthShine)" />
+					{/* Continentes */}
+					<ellipse cx="28" cy="28" rx="8" ry="6" fill="#22D3EE" opacity="0.4" />
+					<ellipse cx="42" cy="38" rx="10" ry="7" fill="#22D3EE" opacity="0.3" />
+					<circle cx="32" cy="45" r="5" fill="#22D3EE" opacity="0.25" />
+					{/* Atmósfera */}
+					<circle cx="35" cy="35" r="28" fill="none" stroke="rgba(34,211,238,0.2)" strokeWidth="2" />
+				</svg>
+			</motion.div>
 
 			{/* Floating dots */}
 			<div className="absolute top-1/4 right-1/4 w-2 h-2 bg-accent/50 rounded-full animate-pulse" />
@@ -70,15 +102,11 @@ export default function Services() {
 					className="text-center mb-12 sm:mb-20"
 				>
 					<span className="text-accent text-xs sm:text-sm font-medium uppercase tracking-widest mb-3 sm:mb-4 block">
-						Servicios Estelares
+						{t('services.badge')}
 					</span>
 					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-light mb-4 sm:mb-6">
-						Mi arsenal espacial
+						{t('services.title')} <span className="text-gradient-accent">{t('services.titleHighlight')}</span>
 					</h2>
-					<p className="text-light-400 text-base sm:text-lg max-w-2xl mx-auto">
-						Combino tecnología intergaláctica con sensibilidad por el
-						diseño para crear productos digitales de otra dimensión.
-					</p>
 				</motion.div>
 
 				{/* Services grid */}

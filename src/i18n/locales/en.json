@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "mission": "My Mission",
+    "services": "Stellar Services",
+    "arsenal": "Arsenal",
+    "missions": "Missions",
+    "transmission": "Transmission"
+  },
+  "hero": {
+    "badge": "In orbit and ready for liftoff",
+    "greeting": "Hi, I'm",
+    "role": "Frontend Developer",
+    "description": "Exploring the universe of code. 5+ years taking projects to new galaxies with React, TypeScript, and cutting-edge technologies.",
+    "cta": {
+      "explore": "Explore missions",
+      "contact": "Get in touch"
+    },
+    "signals": "Signals"
+  },
+  "about": {
+    "badge": "My Mission",
+    "title": "Navigating the digital cosmos to",
+    "titleHighlight": "create wonders",
+    "description1": "I'm a code explorer with solid experience in product environments. I've piloted ships at healthcare startups, administrative platforms, and internal tools where clean code and great UX are essential.",
+    "description2": "My approach combines",
+    "description2Highlight": "technical judgment with design sensitivity",
+    "description2End": ". I understand that a good product doesn't just work well — it also feels good for those who use it.",
+    "location": "Mexico",
+    "status": "Ready for liftoff",
+    "stats": {
+      "years": "Years in orbit",
+      "projects": "Missions completed",
+      "clients": "Satisfied crew members"
+    },
+    "card": {
+      "title": "Frontend Developer",
+      "subtitle": "+5 years exploring galaxies"
+    }
+  },
+  "services": {
+    "badge": "Stellar Services",
+    "title": "Solutions that orbit",
+    "titleHighlight": "your needs",
+    "items": {
+      "frontend": {
+        "title": "Frontend Development",
+        "description": "Space-grade interfaces with React, TypeScript, and the latest technologies from the stellar fleet."
+      },
+      "responsive": {
+        "title": "Responsive Design",
+        "description": "Experiences that adapt to any vessel, from mobile satellites to space stations."
+      },
+      "performance": {
+        "title": "Optimization",
+        "description": "Rocket speed. I optimize every pixel so your web launches without friction."
+      },
+      "ux": {
+        "title": "UX/UI Integration",
+        "description": "I translate designs into interactive experiences that connect with the crew."
+      }
+    }
+  },
+  "stack": {
+    "badge": "Space Arsenal",
+    "title": "Ship's Technology",
+    "description": "Cutting-edge weapons and tools to conquer any intergalactic challenge."
+  },
+  "projects": {
+    "badge": "Completed Missions",
+    "title": "Successful Explorations",
+    "description": "Space missions that have conquered new galaxies. Each one represents a unique journey with stellar results.",
+    "viewProject": "View project",
+    "viewMore": "View more on GitHub"
+  },
+  "contact": {
+    "badge": "Interstellar communication active",
+    "title": "Ready for a",
+    "titleHighlight": "new mission",
+    "description": "I'm scanning the universe for new space adventures. If you have an interesting mission, get in touch.",
+    "email": {
+      "label": "Direct transmission"
+    },
+    "cta": {
+      "send": "Start transmission",
+      "whatsapp": "WhatsApp"
+    },
+    "copied": "Copied!"
+  },
+  "footer": {
+    "tagline": "Frontend Developer · Code Explorer",
+    "copyright": "Crafted in space.",
+    "backToTop": "Liftoff"
+  }
+}

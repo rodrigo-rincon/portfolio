@@ -1,13 +1,16 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { MapPin, Calendar, Rocket } from 'lucide-react';
 
-const stats = [
-	{ value: '5+', label: 'Años en órbita' },
-	{ value: '30+', label: 'Misiones completadas' },
-	{ value: '15+', label: 'Tripulantes satisfechos' },
-];
-
 export default function About() {
+	const { t } = useTranslation();
+	
+	const stats = [
+		{ value: '5+', label: t('about.stats.years') },
+		{ value: '30+', label: t('about.stats.projects') },
+		{ value: '15+', label: t('about.stats.clients') },
+	];
+
 	return (
 		<section id="about" className="py-16 sm:py-32 relative bg-[#050508]">
 			{/* Fondo negro que se mimetiza con la imagen */}
@@ -59,6 +62,44 @@ export default function About() {
 					<circle cx="80" cy="25" r="2" fill="currentColor" className="text-white/60" />
 					<circle cx="60" cy="70" r="2" fill="currentColor" className="text-white/60" />
 				</svg>
+
+				{/* Planeta Saturno */}
+				<motion.div
+					className="absolute bottom-[15%] left-[5%] hidden lg:block"
+					animate={{ y: [0, -10, 0] }}
+					transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+				>
+					<svg width="120" height="80" viewBox="0 0 120 80" className="opacity-[0.15]">
+						<defs>
+							<linearGradient id="planetGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+								<stop offset="0%" stopColor="#A78BFA" />
+								<stop offset="50%" stopColor="#7C3AED" />
+								<stop offset="100%" stopColor="#4C1D95" />
+							</linearGradient>
+							<radialGradient id="planetShine1" cx="30%" cy="30%" r="50%">
+								<stop offset="0%" stopColor="white" stopOpacity="0.4" />
+								<stop offset="100%" stopColor="white" stopOpacity="0" />
+							</radialGradient>
+							<linearGradient id="ringGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+								<stop offset="0%" stopColor="#A78BFA" stopOpacity="0" />
+								<stop offset="30%" stopColor="#A78BFA" stopOpacity="0.6" />
+								<stop offset="50%" stopColor="#D8B4FE" stopOpacity="0.8" />
+								<stop offset="70%" stopColor="#A78BFA" stopOpacity="0.6" />
+								<stop offset="100%" stopColor="#A78BFA" stopOpacity="0" />
+							</linearGradient>
+						</defs>
+						{/* Anillo trasero */}
+						<ellipse cx="60" cy="40" rx="50" ry="12" fill="none" stroke="url(#ringGrad1)" strokeWidth="3" opacity="0.5" />
+						{/* Cuerpo del planeta */}
+						<circle cx="60" cy="40" r="22" fill="url(#planetGrad1)" />
+						<circle cx="60" cy="40" r="22" fill="url(#planetShine1)" />
+						{/* Bandas del planeta */}
+						<ellipse cx="60" cy="35" rx="20" ry="3" fill="rgba(255,255,255,0.1)" />
+						<ellipse cx="60" cy="45" rx="18" ry="2" fill="rgba(255,255,255,0.08)" />
+						{/* Anillo frontal */}
+						<path d="M 10 40 Q 60 28 110 40" fill="none" stroke="url(#ringGrad1)" strokeWidth="4" />
+					</svg>
+				</motion.div>
 			</div>
 
 			<div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
@@ -93,10 +134,10 @@ export default function About() {
 									</div>
 									<div>
 										<p className="text-light font-semibold">
-											Frontend Developer
+											{t('about.card.title')}
 										</p>
 										<p className="text-light-400 text-sm">
-											+5 años explorando galaxias
+											{t('about.card.subtitle')}
 										</p>
 									</div>
 								</div>
@@ -116,30 +157,25 @@ export default function About() {
 						transition={{ duration: 0.8 }}
 					>
 						<span className="text-accent text-xs sm:text-sm font-medium uppercase tracking-widest mb-3 sm:mb-4 block">
-							Mi Misión
+							{t('about.badge')}
 						</span>
 						<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-light mb-4 sm:mb-6 leading-tight">
-							Navegando el cosmos digital para{' '}
+							{t('about.title')}{' '}
 							<span className="text-gradient-accent">
-								crear maravillas
+								{t('about.titleHighlight')}
 							</span>
 						</h2>
 
 						<div className="space-y-3 sm:space-y-4 text-light-400 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
 							<p>
-								Soy un explorador del código con experiencia
-								sólida en entornos de producto. He tripulado
-								naves en startups de salud, plataformas administrativas y
-								herramientas internas donde el código limpio y
-								la buena UX son esenciales.
+								{t('about.description1')}
 							</p>
 							<p>
-								Mi enfoque combina{' '}
+								{t('about.description2')}{' '}
 								<span className="text-light">
-									criterio técnico con sensibilidad de diseño
+									{t('about.description2Highlight')}
 								</span>
-								. Entiendo que un buen producto no solo funciona
-								bien — también se siente bien para quien lo usa.
+								{t('about.description2End')}
 							</p>
 						</div>
 
@@ -147,11 +183,11 @@ export default function About() {
 						<div className="flex flex-wrap gap-6 mb-10">
 							<div className="flex items-center gap-2 text-light-300">
 								<MapPin className="w-4 h-4 text-accent" />
-								<span>México</span>
+								<span>{t('about.location')}</span>
 							</div>
 							<div className="flex items-center gap-2 text-light-300">
 								<Calendar className="w-4 h-4 text-accent" />
-								<span>Listo para despegar</span>
+								<span>{t('about.status')}</span>
 							</div>
 						</div>
 
