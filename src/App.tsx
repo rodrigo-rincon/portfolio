@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -9,10 +10,14 @@ import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import StarryBackground from './components/StarryBackground';
 import CustomCursor from './components/CustomCursor';
+import SpaceLoader from './components/SpaceLoader';
 
 function App() {
+	const [isLoading, setIsLoading] = useState(true);
+
 	return (
 		<div className="min-h-screen bg-dark relative">
+			{isLoading && <SpaceLoader onLoadingComplete={() => setIsLoading(false)} />}
 			<CustomCursor />
 			<StarryBackground />
 			<Header />
