@@ -142,6 +142,38 @@ export default function StarryBackground() {
 				className="absolute w-2 h-2 rounded-full star-glow bg-accent-purple/80 animate-twinkle"
 				style={{ left: '25%', top: '70%', animationDelay: '0.5s' }}
 			/>
+
+			{/* Sol distante - fijo en el fondo */}
+			<div className="fixed top-[12%] right-[8%] z-0">
+				<div className="relative">
+					{/* Glow exterior difuso */}
+					<div className="absolute -inset-4 w-20 h-20 bg-amber-200/15 rounded-full blur-2xl animate-pulse" style={{ animationDuration: '5s' }} />
+					<div className="absolute -inset-6 w-24 h-24 bg-orange-300/8 rounded-full blur-3xl" />
+					{/* Corona solar */}
+					<div className="absolute -inset-2 w-16 h-16 rounded-full blur-lg" style={{ background: 'radial-gradient(circle, rgba(251, 191, 36, 0.25) 0%, rgba(245, 158, 11, 0.1) 50%, transparent 70%)' }} />
+					{/* Núcleo del sol */}
+					<svg width="48" height="48" viewBox="0 0 48 48" className="relative">
+						<defs>
+							<radialGradient id="distantSunCore" cx="50%" cy="50%" r="50%">
+								<stop offset="0%" stopColor="#FFFBEB" stopOpacity="1" />
+								<stop offset="25%" stopColor="#FDE68A" stopOpacity="0.95" />
+								<stop offset="50%" stopColor="#FBBF24" stopOpacity="0.8" />
+								<stop offset="75%" stopColor="#F59E0B" stopOpacity="0.5" />
+								<stop offset="100%" stopColor="#D97706" stopOpacity="0.2" />
+							</radialGradient>
+							<radialGradient id="distantSunGlow" cx="50%" cy="50%" r="50%">
+								<stop offset="0%" stopColor="#FEF3C7" stopOpacity="0.5" />
+								<stop offset="60%" stopColor="#FDE68A" stopOpacity="0.2" />
+								<stop offset="100%" stopColor="#FDE68A" stopOpacity="0" />
+							</radialGradient>
+						</defs>
+						{/* Halo exterior */}
+						<circle cx="24" cy="24" r="22" fill="url(#distantSunGlow)" />
+						{/* Cuerpo del sol */}
+						<circle cx="24" cy="24" r="10" fill="url(#distantSunCore)" />
+					</svg>
+				</div>
+			</div>
 		</div>
 	);
 }

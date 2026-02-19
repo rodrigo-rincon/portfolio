@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { MapPin, Calendar, Rocket } from 'lucide-react';
+import { MapPin, Briefcase, Tv, Tent, Camera, Umbrella } from 'lucide-react';
 
 export default function About() {
 	const { t } = useTranslation();
@@ -11,15 +11,20 @@ export default function About() {
 		{ value: '15+', label: t('about.stats.clients') },
 	];
 
+	const interests = [
+		{ icon: Tv, label: t('about.interests.anime'), bgColor: 'bg-accent-purple/10', borderColor: 'border-accent-purple/30', textColor: 'text-accent-purple' },
+		{ icon: Tent, label: t('about.interests.camping'), bgColor: 'bg-green-500/10', borderColor: 'border-green-500/30', textColor: 'text-green-400' },
+		{ icon: Camera, label: t('about.interests.photography'), bgColor: 'bg-accent-gold/10', borderColor: 'border-accent-gold/30', textColor: 'text-accent-gold' },
+		{ icon: Umbrella, label: t('about.interests.noBeach'), bgColor: 'bg-red-500/10', borderColor: 'border-red-500/30', textColor: 'text-red-400', crossed: true },
+	];
+
 	return (
 		<section id="about" className="py-16 sm:py-32 relative bg-[#050508]">
-			{/* Fondo negro que se mimetiza con la imagen */}
+			{/* Background */}
 			<div className="absolute inset-0 bg-gradient-to-b from-dark via-[#050508] to-dark" />
-			
-			{/* Vía Láctea diagonal sutil */}
 			<div className="absolute inset-0 milky-way-gradient opacity-40" />
 			
-			{/* Background decorativo espacial */}
+			{/* Decorative elements */}
 			<div className="absolute inset-0 overflow-hidden">
 				{/* Nebulosas */}
 				<div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-accent-purple/10 rounded-full blur-[120px] animate-nebula" />
@@ -38,22 +43,8 @@ export default function About() {
 				<div className="absolute bottom-[30%] left-[15%] w-1 h-1 bg-white/60 rounded-full animate-twinkle-fast" />
 				<div className="absolute bottom-[15%] right-[35%] w-1.5 h-1.5 bg-accent-purple/40 rounded-full animate-twinkle-slow" style={{ animationDelay: '2s' }} />
 
-				{/* Grid pattern */}
-				<div
-					className="absolute top-1/4 right-0 w-72 h-72 opacity-[0.06]"
-					style={{
-						backgroundImage:
-							'radial-gradient(circle, #6366f1 1.5px, transparent 1.5px)',
-						backgroundSize: '24px 24px',
-					}}
-				/>
-
-				{/* Líneas decorativas cósmicas */}
-				<div className="absolute top-1/3 left-0 w-64 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
-				<div className="absolute bottom-1/3 right-0 w-48 h-px bg-gradient-to-l from-transparent via-accent-cyan/30 to-transparent" />
-				
 				{/* Constelación sutil */}
-				<svg className="absolute top-[15%] right-[5%] w-48 h-48 opacity-20" viewBox="0 0 100 100">
+				<svg className="absolute top-[15%] right-[5%] w-48 h-48 opacity-20 hidden lg:block" viewBox="0 0 100 100">
 					<line x1="20" y1="20" x2="50" y2="35" stroke="currentColor" strokeWidth="0.5" className="text-accent-cyan" />
 					<line x1="50" y1="35" x2="80" y2="25" stroke="currentColor" strokeWidth="0.5" className="text-accent-cyan" />
 					<line x1="50" y1="35" x2="60" y2="70" stroke="currentColor" strokeWidth="0.5" className="text-accent-cyan" />
@@ -63,149 +54,179 @@ export default function About() {
 					<circle cx="60" cy="70" r="2" fill="currentColor" className="text-white/60" />
 				</svg>
 
-				{/* Planeta Saturno */}
+				{/* Planeta flotante */}
 				<motion.div
-					className="absolute bottom-[15%] left-[5%] hidden lg:block"
+					className="absolute bottom-[10%] left-[3%] hidden lg:block"
 					animate={{ y: [0, -10, 0] }}
 					transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
 				>
-					<svg width="120" height="80" viewBox="0 0 120 80" className="opacity-[0.15]">
+					<svg width="80" height="80" viewBox="0 0 80 80" className="opacity-20">
 						<defs>
-							<linearGradient id="planetGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+							<linearGradient id="aboutPlanetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
 								<stop offset="0%" stopColor="#A78BFA" />
-								<stop offset="50%" stopColor="#7C3AED" />
 								<stop offset="100%" stopColor="#4C1D95" />
 							</linearGradient>
-							<radialGradient id="planetShine1" cx="30%" cy="30%" r="50%">
-								<stop offset="0%" stopColor="white" stopOpacity="0.4" />
+							<radialGradient id="aboutPlanetShine" cx="30%" cy="30%" r="50%">
+								<stop offset="0%" stopColor="white" stopOpacity="0.3" />
 								<stop offset="100%" stopColor="white" stopOpacity="0" />
 							</radialGradient>
-							<linearGradient id="ringGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
-								<stop offset="0%" stopColor="#A78BFA" stopOpacity="0" />
-								<stop offset="30%" stopColor="#A78BFA" stopOpacity="0.6" />
-								<stop offset="50%" stopColor="#D8B4FE" stopOpacity="0.8" />
-								<stop offset="70%" stopColor="#A78BFA" stopOpacity="0.6" />
-								<stop offset="100%" stopColor="#A78BFA" stopOpacity="0" />
-							</linearGradient>
 						</defs>
-						{/* Anillo trasero */}
-						<ellipse cx="60" cy="40" rx="50" ry="12" fill="none" stroke="url(#ringGrad1)" strokeWidth="3" opacity="0.5" />
-						{/* Cuerpo del planeta */}
-						<circle cx="60" cy="40" r="22" fill="url(#planetGrad1)" />
-						<circle cx="60" cy="40" r="22" fill="url(#planetShine1)" />
-						{/* Bandas del planeta */}
-						<ellipse cx="60" cy="35" rx="20" ry="3" fill="rgba(255,255,255,0.1)" />
-						<ellipse cx="60" cy="45" rx="18" ry="2" fill="rgba(255,255,255,0.08)" />
-						{/* Anillo frontal */}
-						<path d="M 10 40 Q 60 28 110 40" fill="none" stroke="url(#ringGrad1)" strokeWidth="4" />
+						<circle cx="40" cy="40" r="25" fill="url(#aboutPlanetGrad)" />
+						<circle cx="40" cy="40" r="25" fill="url(#aboutPlanetShine)" />
 					</svg>
 				</motion.div>
+
+				{/* Líneas decorativas cósmicas */}
+				<div className="absolute top-1/3 left-0 w-64 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
+				<div className="absolute bottom-1/3 right-0 w-48 h-px bg-gradient-to-l from-transparent via-accent-cyan/30 to-transparent" />
 			</div>
 
-			<div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-				<div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-					{/* Left - Image composition */}
+			<div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
+				{/* Header */}
+				<motion.div
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					className="text-center mb-16"
+				>
+					<span className="text-accent text-xs sm:text-sm font-medium uppercase tracking-widest mb-4 block">
+						{t('about.badge')}
+					</span>
+					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-light mb-4 leading-tight">
+						{t('about.title')}{' '}
+						<span className="text-gradient-accent">{t('about.titleHighlight')}</span>
+					</h2>
+					<p className="text-light-400 text-lg max-w-2xl mx-auto">
+						{t('about.intro')}
+					</p>
+				</motion.div>
+
+				{/* Main content */}
+				<div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+					
+					{/* Left - Photo + Quick info */}
 					<motion.div
-						initial={{ opacity: 0, x: -50 }}
+						initial={{ opacity: 0, x: -30 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						viewport={{ once: true }}
-						transition={{ duration: 0.8 }}
-						className="relative"
+						transition={{ duration: 0.6 }}
+						className="lg:col-span-2"
 					>
-						{/* Main image */}
-						<div className="relative rounded-3xl overflow-hidden aspect-[4/5] max-w-md mx-auto lg:mx-0">
-							<img
-								src={`${import.meta.env.BASE_URL}images/rodrigo-dev.jpeg`}
-								alt="Rodrigo Rincón"
-								className="w-full h-full object-cover"
-							/>
-
-							{/* Floating card - Experience */}
-							<motion.div
-								initial={{ opacity: 0, y: 20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{ delay: 0.5 }}
-								className="absolute bottom-6 left-6 right-6 glass rounded-2xl p-4"
-							>
-								<div className="flex items-center gap-4">
-									<div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
-										<Rocket className="w-6 h-6 text-accent" />
-									</div>
-									<div>
-										<p className="text-light font-semibold">
-											{t('about.card.title')}
-										</p>
-										<p className="text-light-400 text-sm">
-											{t('about.card.subtitle')}
-										</p>
-									</div>
+						<div className="sticky top-24">
+							{/* Photo */}
+							<div className="relative mb-6">
+								<div className="relative rounded-2xl overflow-hidden aspect-square max-w-sm mx-auto lg:mx-0">
+									<img
+										src={`${import.meta.env.BASE_URL}images/rodrigo-dev.jpeg`}
+										alt="Rodrigo Rincón"
+										className="w-full h-full object-cover"
+									/>
+									<div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent" />
 								</div>
-							</motion.div>
-						</div>
+								
+								{/* Decorative border */}
+								<div className="absolute -inset-2 border border-accent/20 rounded-3xl -z-10" />
+							</div>
 
-						{/* Decorative elements */}
-						<div className="absolute -top-6 -right-6 w-24 h-24 border border-accent/20 rounded-3xl" />
-						<div className="absolute -bottom-6 -left-6 w-32 h-32 border border-accent-cyan/20 rounded-3xl" />
+							{/* Quick info pills */}
+							<div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6">
+								<div className="flex items-center gap-2 px-4 py-2 rounded-full glass text-sm">
+									<MapPin className="w-4 h-4 text-accent" />
+									<span className="text-light-300">{t('about.location')}</span>
+								</div>
+								<div className="flex items-center gap-2 px-4 py-2 rounded-full glass text-sm">
+									<Briefcase className="w-4 h-4 text-green-400" />
+									<span className="text-light-300">{t('about.status')}</span>
+								</div>
+							</div>
+
+							{/* Interest tags */}
+							<div className="flex flex-wrap justify-center lg:justify-start gap-2">
+								{interests.map((interest, index) => (
+									<motion.div
+										key={interest.label}
+										initial={{ opacity: 0, scale: 0.8 }}
+										whileInView={{ opacity: 1, scale: 1 }}
+										viewport={{ once: true }}
+										transition={{ delay: 0.1 * index }}
+										whileHover={{ scale: 1.05, y: -2 }}
+										className={`flex items-center gap-2 px-3 py-1.5 rounded-full ${interest.bgColor} border ${interest.borderColor} cursor-default group`}
+									>
+										<interest.icon className={`w-3.5 h-3.5 ${interest.textColor} ${interest.crossed ? 'group-hover:rotate-12' : ''} transition-transform`} />
+										<span className={`text-xs ${interest.textColor}`}>
+											{interest.label}
+											{interest.crossed && ' ❌'}
+										</span>
+									</motion.div>
+								))}
+							</div>
+						</div>
 					</motion.div>
 
-					{/* Right - Content */}
+					{/* Right - Story + Stats */}
 					<motion.div
-						initial={{ opacity: 0, x: 50 }}
+						initial={{ opacity: 0, x: 30 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						viewport={{ once: true }}
-						transition={{ duration: 0.8 }}
+						transition={{ duration: 0.6, delay: 0.2 }}
+						className="lg:col-span-3 space-y-6"
 					>
-						<span className="text-accent text-xs sm:text-sm font-medium uppercase tracking-widest mb-3 sm:mb-4 block">
-							{t('about.badge')}
-						</span>
-						<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-light mb-4 sm:mb-6 leading-tight">
-							{t('about.title')}{' '}
-							<span className="text-gradient-accent">
-								{t('about.titleHighlight')}
-							</span>
-						</h2>
-
-						<div className="space-y-3 sm:space-y-4 text-light-400 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
-							<p>
-								{t('about.description1')}
-							</p>
-							<p>
-								{t('about.description2')}{' '}
-								<span className="text-light">
-									{t('about.description2Highlight')}
-								</span>
-								{t('about.description2End')}
-							</p>
+						{/* Professional Story */}
+						<div className="glass rounded-2xl p-6 sm:p-8 border border-white/5">
+							<div className="space-y-4 text-light-400 leading-relaxed">
+								<p className="text-base sm:text-lg">
+									{t('about.description1')}
+								</p>
+								<p className="text-base sm:text-lg">
+									{t('about.description2')}
+								</p>
+							</div>
 						</div>
 
-						{/* Info items */}
-						<div className="flex flex-wrap gap-6 mb-10">
-							<div className="flex items-center gap-2 text-light-300">
-								<MapPin className="w-4 h-4 text-accent" />
-								<span>{t('about.location')}</span>
-							</div>
-							<div className="flex items-center gap-2 text-light-300">
-								<Calendar className="w-4 h-4 text-accent" />
-								<span>{t('about.status')}</span>
+						{/* Personal Story */}
+						<div className="glass rounded-2xl p-6 sm:p-8 border border-accent/10 relative overflow-hidden">
+							{/* Decorative star */}
+							<div className="absolute top-4 right-4 w-2 h-2 bg-accent-gold/40 rounded-full animate-twinkle" />
+							<div className="absolute bottom-6 right-8 w-1.5 h-1.5 bg-accent-cyan/30 rounded-full animate-twinkle-slow" />
+							
+							<p className="text-accent text-xs font-medium uppercase tracking-wider mb-4">
+								{t('about.personal.title')}
+							</p>
+							<div className="space-y-3 text-light-400 text-sm sm:text-base leading-relaxed">
+								<div className="flex items-start gap-3">
+									<Tv className="w-4 h-4 text-accent-purple mt-1 shrink-0" />
+									<p>{t('about.personal.anime')}</p>
+								</div>
+								<div className="flex items-start gap-3">
+									<Tent className="w-4 h-4 text-green-400 mt-1 shrink-0" />
+									<p>{t('about.personal.camping')}</p>
+								</div>
+								<div className="flex items-start gap-3">
+									<Camera className="w-4 h-4 text-accent-gold mt-1 shrink-0" />
+									<p>{t('about.personal.photography')}</p>
+								</div>
+								<div className="flex items-start gap-3">
+									<Umbrella className="w-4 h-4 text-red-400 mt-1 shrink-0" />
+									<p className="italic">{t('about.personal.noBeach')} <span className="not-italic">🏔️✓ 🏖️✗</span></p>
+								</div>
 							</div>
 						</div>
 
 						{/* Stats */}
-						<div className="grid grid-cols-3 gap-6">
+						<div className="grid grid-cols-3 gap-4">
 							{stats.map((stat, index) => (
 								<motion.div
 									key={stat.label}
 									initial={{ opacity: 0, y: 20 }}
 									whileInView={{ opacity: 1, y: 0 }}
 									viewport={{ once: true }}
-									transition={{ delay: 0.2 + index * 0.1 }}
-									className="text-center lg:text-left"
+									transition={{ delay: 0.3 + index * 0.1 }}
+									className="glass rounded-xl p-4 sm:p-6 text-center border border-white/5 hover:border-accent/20 transition-colors"
 								>
-									<p className="text-3xl md:text-4xl font-bold text-gradient-accent mb-1">
+									<p className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient-accent mb-1">
 										{stat.value}
 									</p>
-									<p className="text-sm text-light-400">
+									<p className="text-xs sm:text-sm text-light-400">
 										{stat.label}
 									</p>
 								</motion.div>

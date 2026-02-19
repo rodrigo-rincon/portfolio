@@ -21,10 +21,16 @@
     "badge": "Mi Misión",
     "title": "Navegando el cosmos digital para",
     "titleHighlight": "crear maravillas",
+    "intro": "No soy solo líneas de código y commits.",
     "description1": "Soy un explorador del código con experiencia sólida en entornos de producto. He tripulado naves en startups de salud, plataformas administrativas y herramientas internas donde el código limpio y la buena UX son esenciales.",
-    "description2": "Mi enfoque combina",
-    "description2Highlight": "criterio técnico con sensibilidad de diseño",
-    "description2End": ". Entiendo que un buen producto no solo funciona bien — también se siente bien para quien lo usa.",
+    "description2": "Mi enfoque combina criterio técnico con sensibilidad de diseño. Entiendo que un buen producto no solo funciona bien — también se siente bien para quien lo usa.",
+    "personal": {
+      "title": "Cuando cierro el IDE...",
+      "anime": "Me encontrarás maratoneando anime o reviviendo Juego de Tronos por enésima vez (mi serie favorita, sin discusión).",
+      "camping": "Soy aficionado a la naturaleza — cada que puedo salgo con mis amigos a acampar, armar tiendas y hacer fogatas bajo las estrellas.",
+      "photography": "También soy el fotógrafo amateur oficial de la familia, siempre capturando momentos.",
+      "noBeach": "¿La playa? No, gracias. La odio. Prefiero mil veces una montaña."
+    },
     "location": "México",
     "status": "Listo para despegar",
     "stats": {
@@ -32,9 +38,11 @@
       "projects": "Misiones completadas",
       "clients": "Tripulantes satisfechos"
     },
-    "card": {
-      "title": "Frontend Developer",
-      "subtitle": "+5 años explorando galaxias"
+    "interests": {
+      "anime": "Anime & Series",
+      "camping": "Camping",
+      "photography": "Fotografía",
+      "noBeach": "Anti-playa"
     }
   },
   "services": {

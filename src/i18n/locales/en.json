@@ -21,10 +21,16 @@
     "badge": "My Mission",
     "title": "Navigating the digital cosmos to",
     "titleHighlight": "create wonders",
+    "intro": "I'm not just lines of code and commits.",
     "description1": "I'm a code explorer with solid experience in product environments. I've piloted ships at healthcare startups, administrative platforms, and internal tools where clean code and great UX are essential.",
-    "description2": "My approach combines",
-    "description2Highlight": "technical judgment with design sensitivity",
-    "description2End": ". I understand that a good product doesn't just work well — it also feels good for those who use it.",
+    "description2": "My approach combines technical judgment with design sensitivity. I understand that a good product doesn't just work well — it also feels good for those who use it.",
+    "personal": {
+      "title": "When I close the IDE...",
+      "anime": "You'll find me binge-watching anime or rewatching Game of Thrones for the nth time (my favorite series, no debate).",
+      "camping": "I'm a nature enthusiast — whenever I can, I go camping with my friends, setting up tents and making campfires under the stars.",
+      "photography": "I'm also the official amateur photographer of the family, always capturing moments.",
+      "noBeach": "The beach? No thanks. I hate it. I'd rather have a mountain any day."
+    },
     "location": "Mexico",
     "status": "Ready for liftoff",
     "stats": {
@@ -32,9 +38,11 @@
       "projects": "Missions completed",
       "clients": "Satisfied crew members"
     },
-    "card": {
-      "title": "Frontend Developer",
-      "subtitle": "+5 years exploring galaxies"
+    "interests": {
+      "anime": "Anime & Series",
+      "camping": "Camping",
+      "photography": "Photography",
+      "noBeach": "Beach-hater"
     }
   },
   "services": {
